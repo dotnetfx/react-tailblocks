@@ -1,10 +1,8 @@
 import React from 'react'
-
-import { ExampleComponent } from 'react-tailblocks'
-import 'react-tailblocks/dist/index.css'
+import { Blog1 } from 'react-tailblocks'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <Blog1 />
 }
 
 export default App

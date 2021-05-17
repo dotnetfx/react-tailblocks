@@ -1,0 +1,2 @@
+To publish: yarn publish
+To update Github: yarn deploy
