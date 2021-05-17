@@ -23,34 +23,34 @@ import { Blog1 } from 'react-tailblocks'
 class Example extends Component {
   render() {
     return <Blog1 details={
-      [
-        {
-            title: "The Catalyzer",
-            category: "Category",
-            description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
-            image: "https://dummyimage.com/720x400",
-            more: "Learn More",
-            views: 1200,
-            comments: 6
-        }, {
-            title: "The 400 Blows",
-            category: "Category",
-            description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
-            image: "https://dummyimage.com/720x400",
-            more: "Learn More",
-            views: 1200,
-            comments: 6
-        },{
-            title: "Shooting Stars",
-            category: "Category",
-            description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
-            image: "https://dummyimage.com/720x400",
-            more: "Learn More",
-            views: "1.2K",
-            comments: 6
-        }
-      ]
-    }/>
+    [
+      {
+          title: "The Catalina",
+          category: "Boating",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
+          image: "https://dummyimage.com/720x400",
+          more: "Learn More",
+          views: "1.2K",
+          comments: "6"
+      }, {
+          title: "The 400 Blowfish",
+          category: "Fishing",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
+          image: "https://dummyimage.com/720x400",
+          more: "Learn More",
+          views: "1.2K",
+          comments: "6"
+      },{
+          title: "Shooting Fish",
+          category: "Fishing",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
+          image: "https://dummyimage.com/720x400",
+          more: "Learn More",
+          views: "1.2K",
+          comments: "6"
+      }
+    ]
+  }/>
   }
 }
 ```
