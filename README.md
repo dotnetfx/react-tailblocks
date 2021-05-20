@@ -22,7 +22,7 @@ import { Blog1 } from 'react-tailblocks'
 
 class Example extends Component {
   render() {
-    return <Blog1 details={
+    return <Blog1 options={
     [
       {
           title: "The Catalina",
@@ -54,6 +54,18 @@ class Example extends Component {
   }
 }
 ```
+
+## Components
+Blog1
+Card1
+Dashboar1
+Footer4
+Header2
+Hero1
+Logo1
+Pricing1
+Register1
+Tabel1
 
 ## License
 
