@@ -1,1 +1,2 @@
-export { default as Blog1 } from './components/blog1'
+export * from './components'
+export * from './components/svgs'

@@ -1,16 +1,19 @@
 import React from 'react'
 
-export default function Register1() {
+export default function Register1({ options, className }) {
+    const _options = options || {
+        title: "Sign Up for an Account"
+    }
+
     return (
-        <div className="container mx-auto">
+        <div className={"container mx-auto" + className }>
             <div className="flex justify-center px-6 my-12">
 				<div className="w-full xl:w-3/4 lg:w-11/12 flex">
-					<div
-                        className="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
-                        style={{backgroundImage: "url('https://dummyimage.com/390x580')"}}
-                    ></div>
+					<div className="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+                        style={{backgroundImage: "url('https://dummyimage.com/390x580')"}}>
+                    </div>
 					<div className="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
-                        <h3 className="pt-4 text-2xl text-center">Create an Account!</h3>
+                        <h3 className="pt-4 text-2xl text-center">{ _options.title }</h3>
                         <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
                             <div className="mb-4 md:flex md:justify-between">
                                 <div className="mb-4 md:mr-2 md:mb-0">
@@ -94,7 +97,7 @@ export default function Register1() {
                                     className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
                                     href="./index.html"
                                 >
-                                    Already have an account? Login!
+                                    Already have an account? Login
 								</a>
                             </div>
                         </form>
