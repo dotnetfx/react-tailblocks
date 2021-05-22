@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ArrowRightSvg } from './svgs'
+import { ArrowSmRightIcon } from '@heroicons/react/outline'
 
 export default function Pricing1({ options }) {
     const _options = options || {
@@ -192,7 +192,7 @@ export default function Pricing1({ options }) {
                                         <button className={"flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 " +
                                             " rounded " + (popular === "" ? '' : "bg-blue-500")} onClick={c.button.onClick}>
                                             {c.button.title}
-                                            <ArrowRightSvg />
+                                            <ArrowSmRightIcon className="ml-4 h-5 w-5" />
                                         </button>
                                         <p className="text-xs text-gray-500 mt-3">{c.description}</p>
                                     </div>

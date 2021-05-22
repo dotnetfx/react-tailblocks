@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Table from './table1'
 import Card from './card1'
-import { UsersBoldSvg, UsersSvg, CartBoldSvg, BagBoldSvg, PieChartSvg, ApplicationsSvg, ElementsSvg, TablesSvg, FormSvg } from './svgs'
+import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
 
 export default function Dashboard1({ options }) {
     const _options = options || {
@@ -9,7 +9,7 @@ export default function Dashboard1({ options }) {
             category: "Manage",
             items: [{
                     title: "Dashboard",
-                    icon: <PieChartSvg />,
+                    icon: <ChartPieIcon className="h-6 w-6" />,
                     onClick: (item) => {},
                     content: 
                         <div>
@@ -21,7 +21,7 @@ export default function Dashboard1({ options }) {
                                         value: "8,282",
                                         icon: 
                                             <div className="p-3 rounded-full bg-green-600 bg-opacity-75">
-                                                <UsersBoldSvg />
+                                                <UserGroupIcon className="h-8 w-8"/>
                                             </div>
                                     }}/>
                                 </div>
@@ -32,7 +32,7 @@ export default function Dashboard1({ options }) {
                                         value: "200,532",
                                         icon: 
                                             <div className="p-3 rounded-full bg-yellow-600 bg-opacity-75">
-                                                <CartBoldSvg />
+                                                <CollectionIcon className="h-8 w-8" />
                                             </div>
                                     }} />
                                 </div>
@@ -43,7 +43,7 @@ export default function Dashboard1({ options }) {
                                         value: "215,548",
                                         icon: 
                                             <div className="p-3 rounded-full bg-indigo-600 bg-opacity-75">
-                                                <BagBoldSvg />
+                                                <ShoppingBagIcon className="h-8 w-8" />
                                             </div>
                                     }} />
                                 </div>
@@ -51,7 +51,7 @@ export default function Dashboard1({ options }) {
                         </div>
                 }, {
                     title: "Users",
-                    icon: <UsersSvg />,
+                    icon: <UserGroupIcon className="h-6 w-6" />,
                     onClick: (item) => {},
                     content: 
                         <div>
@@ -60,7 +60,7 @@ export default function Dashboard1({ options }) {
                         </div>
                 }, {
                     title: "Applications",
-                    icon: <ApplicationsSvg />,
+                    icon: <CollectionIcon className="h-6 w-6" />,
                     onClick: (item) => {},
                     content: <div></div>
                 }
@@ -69,17 +69,17 @@ export default function Dashboard1({ options }) {
             category: "Configure",
             items: [{
                     title: "Elements",
-                    icon: <ElementsSvg />,
+                    icon: <CubeIcon className="h-6 w-6" />,
                     onClick: (item) => {},
                     content: <div></div>
                 }, {
                     title: "Tables",
-                    icon: <TablesSvg />,
+                    icon: <TableIcon className="h-6 w-6" />,
                     onClick: (item) => {},
                     content: <div></div>
                 }, {
                     title: "Forms",
-                    icon: <FormSvg />,
+                    icon: <TemplateIcon className="h-6 w-6" />,
                     onClick: (item) => {},
                     content: <div></div>
                 }

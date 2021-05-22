@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowRightSvg, ViewSvg, CommentSvg } from './svgs'
+import { ArrowSmRightIcon, EyeIcon, ChatIcon } from '@heroicons/react/outline'
 
 export default function Blog1({ options, className }) {
     const _options = options || [
@@ -44,13 +44,13 @@ export default function Blog1({ options, className }) {
                                         <p className="leading-relaxed mb-3">{d.description}</p>
                                         <div className="flex items-center flex-wrap ">
                                             <a className="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">{d.more}
-                                                <ArrowRightSvg />
+                                                <ArrowSmRightIcon className="ml-4 h-5 w-5" />
                                             </a>
                                             <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                                                <ViewSvg />{d.views}
+                                                <EyeIcon className="h-5 w-5" />{d.views}
                                             </span>
                                             <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                                                <CommentSvg />{d.comments}
+                                                <ChatIcon className="h-5 w-5" />{d.comments}
                                             </span>
                                         </div>
                                     </div>

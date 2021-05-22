@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './logo1'
-import { ArrowRightSvg } from './svgs'
+import { ArrowSmRightIcon } from '@heroicons/react/outline'
 
 export default function Header2({ options, className }) {
     const _options = options || {
@@ -41,7 +41,7 @@ export default function Header2({ options, className }) {
                 </nav>
                 <button className="inline-flex items-center bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 
                     rounded text-base text-white mt-4 md:mt-0" onClick={_options.button.onClick}>{_options.button.title}
-                    <ArrowRightSvg />
+                    <ArrowSmRightIcon className="ml-4 h-5 w-5" />
                 </button>
             </div>
         </header>

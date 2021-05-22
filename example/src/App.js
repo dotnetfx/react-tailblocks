@@ -1,5 +1,6 @@
 import React from 'react'
-import { Blog1 as Blog, Footer4 as Footer, Hero1 as Hero, Header5 as Header, Pricing1 as Pricing } from 'react-tailblocks'
+import { Blog1 as Blog, Footer4 as Footer, Hero1 as Hero, Header2 as Header, Pricing1 as Pricing,
+         Form1 as Form } from 'react-tailblocks'
 
 const svg = 
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 
@@ -14,6 +15,7 @@ const App = () => {
       <Hero />
       <Blog />
       <Pricing />
+      <Form />
       <Footer />
     </div>
   )

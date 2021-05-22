@@ -1,5 +1,5 @@
 import React from 'react'
-import { BagBoldSvg } from './svgs'
+import { ShoppingBagIcon } from '@heroicons/react/outline'
 
 export default function Card1({ options, className }) {
     const _options = options || {
@@ -7,7 +7,7 @@ export default function Card1({ options, className }) {
         value: "23,282",
         icon: 
         <div className="p-3 rounded-full bg-indigo-600 bg-opacity-75">
-            <BagBoldSvg />
+            <ShoppingBagIcon className="h-8 w-8" />
         </div>
     }
 

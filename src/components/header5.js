@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Logo from './logo1'
-import { BellSvg } from './svgs'
+import { BellIcon } from '@heroicons/react/outline'
+
 
 export default function Header5({ options, className }) {
     const _options = options || {
@@ -72,7 +73,7 @@ export default function Header5({ options, className }) {
                     {_options.notifications &&
                         <div className="relative">
                             <button className="flex mx-4 text-gray-600 focus:outline-none" onClick={ () => {setShowNotifications(true)} }>
-                                <BellSvg />
+                                <BellIcon className="h-5 w-5" />
                             </button>
                             { showNotifications && 
                                 <div>
