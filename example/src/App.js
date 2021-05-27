@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { ExclamationIcon } from '@heroicons/react/outline'
 import { Blog1 as Blog, Footer4 as Footer, Hero1 as Hero, Header2 as Header, Pricing1 as Pricing,
-         Form1 as Form } from 'react-tailblocks'
+         Form1 as Form, Modal1 as Modal } from 'react-tailblocks'
 
 const svg = 
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 
@@ -9,6 +10,7 @@ const svg =
   </svg>
 
 const App = () => {
+  const [ show, setShow ] = useState(false)
   return (
     <div>
       <Header />

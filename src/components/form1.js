@@ -1,5 +1,5 @@
 import React from 'react'
-import { LockClosedIcon } from '@heroicons/react/solid'
+import { DatabaseIcon } from '@heroicons/react/solid'
 
 export default function Form1({ options, className }) {
     const _options = options || {
@@ -23,36 +23,50 @@ export default function Form1({ options, className }) {
                                     <label htmlFor="full_name" className="block text-sm font-medium text-gray-500">Full name</label>
                                     <input type="text" name="full_name" id="full_name" autoComplete="given-name" className="h-10 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                                 </div>
-
+                            </div>
+                            
+                            <div className="grid gap-6 pt-8">
                                 <div className="col-span-12">
-                                    <label htmlFor="email_address" className="block text-sm font-medium text-gray-500">Email address</label>
+                                    <label htmlFor="street_1" className="block text-sm font-medium text-gray-500">Street 1</label>
+                                    <input type="text" name="street_1" id="street_1" autoComplete="street" className="h-10 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                </div>
+                                <div className="col-span-12">
+                                    <label htmlFor="street_2" className="block text-sm font-medium text-gray-500">Street 2</label>
+                                    <input type="text" name="street_2" id="street_2" autoComplete="street" className="h-10 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                </div>
+
+                                <div className="col-span-6">
+                                    <label htmlFor="city" className="block text-sm font-medium text-gray-500">City</label>
+                                    <input type="text" name="city" id="city" autoComplete="city" className="h-10 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                </div>
+                                <div className="col-span-2">
+                                    <label htmlFor="state" className="block text-sm font-medium text-gray-500">State</label>
+                                    <input type="text" name="state" id="state" autoComplete="state" className="h-10 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                </div>
+                                <div className="col-span-4">
+                                    <label htmlFor="zip" className="block text-sm font-medium text-gray-500">Zip</label>
+                                    <input type="text" name="state" id="zip" autoComplete="zip" className="h-10 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                </div>
+                            </div>
+
+                            <div className="grid gap-6 pt-8">
+                                <div className="col-span-12">
+                                    <label htmlFor="email_address" className="block text-sm font-medium text-gray-500">Email</label>
                                     <input type="text" name="email_address" id="email_address" autoComplete="email" className="h-10 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                                </div>
+                                <div className="col-span-12">
+                                    <label htmlFor="phone" className="block text-sm font-medium text-gray-500">Phone</label>
+                                    <input type="text" name="phone" id="phone" autoComplete="phone" className="h-10 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                                 </div>
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-between mt-4">
-                            <div className="flex items-center">
-                                <input id="remember_me" name="remember_me" type="checkbox" className="h-10 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
-                                <label htmlFor="remember_me" className="ml-2 block text-sm text-gray-500">
-                                    Remember me
-							    </label>
-                            </div>
-
-                            <div className="text-sm">
-                                <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
-                                    Forgot your password?
-							    </a>
-                            </div>
-                        </div>
-
-
-                        <div>
+                        <div className="pt-8">
                             <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-								    <LockClosedIcon className="h-5 w-5 text-blue-500 group-hover:text-blue-400" />
+								    <DatabaseIcon className="h-5 w-5 text-blue-500 group-hover:text-blue-400" />
                                 </span>
-                                Sign in
+                                Save
                             </button>
                         </div>
                     </form>
