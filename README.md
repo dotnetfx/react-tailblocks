@@ -14,6 +14,13 @@ or
 yarn add react-tailblocks
 ```
 
+## Important
+Please be aware this componet library is still under development (see version number before considering usage)
+
+## Documentation
+Detailed documentation is not yet available.  If you are using this early version of the component library
+please see the code for usage details.
+
 ## Usage
 
 ```jsx
@@ -56,15 +63,16 @@ class Example extends Component {
 ```
 
 ## Components
-Blog1
-Card1
-Dashboar1
-Footer4
-Header2
-Hero1
-Logo1
-Pricing1
-Register1
+Blog1, 
+Card1, 
+Dashboard1, 
+Footer4, 
+Forms1, 
+Header2, 
+Hero1, 
+Logo1, 
+Modal1, 
+Pricing1, 
 Tabel1
 
 ## License
