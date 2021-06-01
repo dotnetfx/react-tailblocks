@@ -73,7 +73,7 @@ Hero1,
 Logo1, 
 Modal1, 
 Pricing1, 
-Tabel1
+Table1
 
 ## License
 
