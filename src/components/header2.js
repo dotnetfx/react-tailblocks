@@ -27,7 +27,13 @@ export default function Header2({ button, logo, menu, className }) {
                     justify-center">
                     { _menu.map((m) => m)}
                 </nav>
-                {_button}
+                { typeof _button === "string" ? 
+                    <button className="inline-flex items-center bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 
+                        rounded text-base text-white mt-4 md:mt-0">
+                            {_button}
+                        <ArrowSmRightIcon className="ml-4 h-5 w-5" />
+                    </button> : _button
+                }
             </div>
         </header>
     )

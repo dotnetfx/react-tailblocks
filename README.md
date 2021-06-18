@@ -5,7 +5,7 @@
 [![NPM](https://img.shields.io/npm/v/react-tailblocks.svg)](https://www.npmjs.com/package/react-tailblocks) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
-Install TailwindCss as per TailwindCss documentation (https://tailwindcss.com/docs/installation)
+Install and configure TailwindCss as per TailwindCss documentation (https://tailwindcss.com/docs/installation)
 
 ```bash
 npm install --save react-tailblocks
@@ -59,7 +59,7 @@ export default function Example() {
 ```
 
 ## Components
-Ecommerce1, Header2, Logo 1
+Ecommerce1, Grid1, Header2, Logo 1
 
 ## License
 
