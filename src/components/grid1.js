@@ -13,7 +13,7 @@ export default function Grid1({ items, className }) {
                 <p className="mt-2">$24.00</p>
             </div>
         </div>,
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="1">
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="2">
             <a className="block relative h-48 rounded overflow-hidden">
                 <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
             </a>
@@ -24,7 +24,7 @@ export default function Grid1({ items, className }) {
                 <p className="mt-2">$24.00</p>
             </div>
         </div>,
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="1">
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="3">
             <a className="block relative h-48 rounded overflow-hidden">
                 <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
             </a>
@@ -35,7 +35,7 @@ export default function Grid1({ items, className }) {
                 <p className="mt-2">$24.00</p>
             </div>
         </div>,
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="1">
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="4">
             <a className="block relative h-48 rounded overflow-hidden">
                 <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
             </a>
@@ -46,7 +46,7 @@ export default function Grid1({ items, className }) {
                 <p className="mt-2">$24.00</p>
             </div>
         </div>,
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="1">
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="5">
             <a className="block relative h-48 rounded overflow-hidden">
                 <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
             </a>
@@ -57,7 +57,7 @@ export default function Grid1({ items, className }) {
                 <p className="mt-2">$24.00</p>
             </div>
         </div>,
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="1">
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="6">
             <a className="block relative h-48 rounded overflow-hidden">
                 <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
             </a>
@@ -68,7 +68,7 @@ export default function Grid1({ items, className }) {
                 <p className="mt-2">$24.00</p>
             </div>
         </div>,
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="1">
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="7">
             <a className="block relative h-48 rounded overflow-hidden">
                 <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
             </a>
@@ -79,7 +79,7 @@ export default function Grid1({ items, className }) {
                 <p className="mt-2">$24.00</p>
             </div>
         </div>,
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="1">
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key="8">
             <a className="block relative h-48 rounded overflow-hidden">
                 <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
             </a>
