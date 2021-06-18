@@ -1,8 +1,8 @@
 import React from 'react'
 import { ArrowSmRightIcon, EyeIcon, ChatIcon } from '@heroicons/react/outline'
 
-export default function Blog1({ options, className }) {
-    const _options = options || [
+export default function Blog1({ items, className }) {
+    const _items = items || [
         {
             title: "The Catalyzer",
             category: "Category",
@@ -34,7 +34,7 @@ export default function Blog1({ options, className }) {
         <section className={"text-gray-600 body-font" + className}>
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap -m-4">
-                    { _options.map((d, i) => (
+                    { _items.map((d, i) => (
                             <div className="p-4 md:w-1/3" key={i}>
                                 <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                     <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={d.image} alt="blog" />

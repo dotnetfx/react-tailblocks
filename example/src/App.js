@@ -1,6 +1,5 @@
 import React from 'react'
-import { Blog1 as Blog, Footer4 as Footer, Hero1 as Hero, Header2 as Header, Pricing1 as Pricing,
-         Form1 as Form, Ecommerce1 as Ecommerce } from 'react-tailblocks'
+import { Header2 as Header, Ecommerce1 as Ecommerce } from 'react-tailblocks'
 
 const svg = 
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 
@@ -12,12 +11,32 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Hero />
-      <Ecommerce />
-      <Blog />
-      <Pricing />
-      <Form />
-      <Footer />
+      <Ecommerce items={
+        [
+          {
+              title: "The Catalina",
+              category: "Boating",
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
+              image: 
+                <a className="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
+                </a>,
+              price: <p className="mt-2">$16.00</p>
+          }, {
+              title: "The 400 Blowfish",
+              category: "Fishing",
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
+              image: "https://dummyimage.com/420x260",
+              price: "316.00"
+          },{
+              title: "Shooting Fish",
+              category: "Fishing",
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
+              image: "https://dummyimage.com/420x260",
+              price: 129.99
+          }
+        ]
+  }/>
     </div>
   )
 }

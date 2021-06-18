@@ -25,56 +25,41 @@ please see the code for usage details.
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
-import { Blog1 } from 'react-tailblocks'
+import React from 'react'
+import { Ecommerce1 } from 'react-tailblocks'
 
-class Example extends Component {
-  render() {
-    return <Blog1 options={
+export default function Example() {
+    return <Ecommerce1 items={
     [
       {
           title: "The Catalina",
           category: "Boating",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
-          image: "https://dummyimage.com/720x400",
-          more: "Learn More",
-          views: "1.2K",
-          comments: "6"
+          image: 
+            <a className="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
+            </a>,
+          price: <p className="mt-2">$16.00</p>
       }, {
           title: "The 400 Blowfish",
           category: "Fishing",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
-          image: "https://dummyimage.com/720x400",
-          more: "Learn More",
-          views: "1.2K",
-          comments: "6"
+          image: "https://dummyimage.com/420x260",
+          price: "316.00"
       },{
           title: "Shooting Fish",
           category: "Fishing",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
-          image: "https://dummyimage.com/720x400",
-          more: "Learn More",
-          views: "1.2K",
-          comments: "6"
+          image: "https://dummyimage.com/420x260",
+          price: 129.99
       }
     ]
   }/>
-  }
 }
 ```
 
 ## Components
-Blog1, 
-Card1, 
-Dashboard1, 
-Footer4, 
-Forms1, 
-Header2, 
-Hero1, 
-Logo1, 
-Modal1, 
-Pricing1, 
-Table1
+Ecommerce1, Header2, Logo 1
 
 ## License
 
