@@ -5,7 +5,7 @@
 [![NPM](https://img.shields.io/npm/v/react-tailblocks.svg)](https://www.npmjs.com/package/react-tailblocks) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
-Install TailwindCss as per TailwindCss documentation (https://tailwindcss.com/)
+Install TailwindCss as per TailwindCss documentation (https://tailwindcss.com/docs/installation)
 
 ```bash
 npm install --save react-tailblocks
