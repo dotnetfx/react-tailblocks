@@ -28,7 +28,7 @@ const App = () => {
               description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",
               image: "https://dummyimage.com/420x260",
               price: "316.00"
-          },{
+          }, {
               title: "Shooting Fish",
               category: "Fishing",
               description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet hendrerit nisi quis viverra. Cras quis ipsum arcu. Phasellus in nibh mauris. Cras malesuada facilisis porttitor.",

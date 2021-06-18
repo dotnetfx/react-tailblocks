@@ -81,8 +81,8 @@ export default function Ecommerce1({ items, className }) {
         <section className={"text-gray-600 body-font " + className}>
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap -m-4">
-                    {_items.map((i) => (
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    {_items.map((i, c) => (
+                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key={c}>
                             {typeof i.image === "string" ?
                                 <a className="block relative h-48 rounded overflow-hidden">
                                     <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={i.image} />
@@ -93,7 +93,7 @@ export default function Ecommerce1({ items, className }) {
                                 {typeof i.title === "string" ?
                                     <h2 className="text-gray-900 title-font text-lg font-medium">{i.title}</h2> : i.title}
                                 {typeof i.description === "string" ? 
-                                    <p classname="mt-1 text-sm">{i.description}</p> : i.description}
+                                    <p className="mt-1 text-sm">{i.description}</p> : i.description}
                                 {typeof i.price === "string" || typeof i.price === "number" ?
                                     <p className="mt-2">${i.price}</p> : i.price}
                             </div>
