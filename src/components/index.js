@@ -1,5 +1,6 @@
-
+export { default as Content3 } from './content3'
 export { default as Ecommerce1 } from './ecommerce1'
+export { default as Email1 } from './email1'
 export { default as Feature1 } from './feature1'
 export { default as Footer4 } from './footer4'
 export { default as Grid1 } from './grid1'

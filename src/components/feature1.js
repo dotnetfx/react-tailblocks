@@ -58,6 +58,7 @@ export default function Feature1({ title, features, className }) {
                                         <p className="leading-relaxed text-base">{f.description}</p> :
                                         f.description
                                     }
+                                    <br />
                                     { f.more }
                                 </div>
                             </div>
