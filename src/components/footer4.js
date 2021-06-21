@@ -4,11 +4,11 @@ import { FacebookSvg, TwitterSvg, InstagramSvg, LinkedInSvg } from './svgs'
 
 export default function Footer4({ logo, copyright, facebook, twitter, instagram, linkedin, className }) {
     const _logo = logo || <Logo />
-    const _copyright = copyright || "© 2020 Tailblocks"
-    const _facebook = facebook || "react-tailblocks"
-    const _twitter = twitter || "react-tailblocks"
-    const _instagram = instagram || "react-tailblocks"
-    const _linkedin = linkedin || "react-tailblocks"
+    const _copyright = copyright || "© 2021 React-Tailblocks"
+    const _facebook = facebook === undefined ? "react-tailblocks" : facebook
+    const _twitter = twitter === undefined ? "react-tailblocks" : twitter
+    const _instagram = instagram === undefined ? "react-tailblocks" : instagram
+    const _linkedin = linkedin === undefined ? "react-tailblocks" : linkedin
 
     return (
         <footer className={"text-gray-600 body-font" + className}>

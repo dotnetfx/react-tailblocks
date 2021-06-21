@@ -3,12 +3,13 @@ import Logo from './logo1'
 import { ArrowSmRightIcon } from '@heroicons/react/outline'
 
 export default function Header2({ button, logo, menu, className }) {
-    const _button = button || 
+    const _button = button === undefined ? 
         <button className="inline-flex items-center bg-gray-100 text-gray-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 
             rounded text-base mt-4 md:mt-0">
-                Sign Up
+                Button
             <ArrowSmRightIcon className="ml-4 h-5 w-5" />
-        </button>
+        </button> :
+        <React.Fragment></React.Fragment>
     
     const _logo = logo || <Logo inverse={true} />
     
