@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Hero button1={null} />
+      <Hero />
       <Grid />
       <Footer />
     </div>

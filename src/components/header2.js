@@ -3,13 +3,25 @@ import Logo from './logo1'
 import { ArrowSmRightIcon } from '@heroicons/react/outline'
 
 export default function Header2({ button, logo, menu, className }) {
-    const _button = button === undefined ? 
+    let _button = 
         <button className="inline-flex items-center bg-gray-100 text-gray-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 
             rounded text-base mt-4 md:mt-0">
                 Button
             <ArrowSmRightIcon className="ml-4 h-5 w-5" />
-        </button> :
-        <React.Fragment></React.Fragment>
+        </button>
+
+    if (button !== undefined) {
+        if (button && typeof button.title === "string") {
+            _button = 
+                <button className="inline-flex items-center bg-gray-100 text-gray-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 
+                    rounded text-base mt-4 md:mt-0" onClick={button.onClick ? button.onClick : ()=>{}}>
+                        {button.title}
+                    <ArrowSmRightIcon className="ml-4 h-5 w-5" />
+                </button>
+        } else {
+            _button = button
+        }
+    }
     
     const _logo = logo || <Logo inverse={true} />
     
@@ -28,14 +40,7 @@ export default function Header2({ button, logo, menu, className }) {
                     justify-center">
                     { _menu.map((m) => m)}
                 </nav>
-                { _button && typeof _button.title === "string" ? 
-                    <button className="inline-flex items-center bg-gray-100 text-gray-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-                        onClick={_button.onClick ? _button.onClick : ()=>{}}>
-                        {_button}
-                        <ArrowSmRightIcon className="ml-4 h-5 w-5" />
-                    </button> : 
-                    _button
-                }
+                { _button }
             </div>
         </header>
     )
