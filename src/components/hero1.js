@@ -5,13 +5,32 @@ export default function Hero1({ title, description, image, button1, button2, cla
     const _description = description || "Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray."
     const _image = image || "https://dummyimage.com/720x600"
 
-    const _button1 = button1 === undefined ? 
-        <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Button One</button> :
-        <React.Fragment></React.Fragment>
+    let _button1 = <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Button One</button>
+    let _button2 = <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button Two</button>
+    
+    if (button1 !== undefined) {
+        if (button1 && typeof button1.title === "string") {
+            _button1 = 
+                <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" 
+                    onClick={button1.onClick ? button1.onClick : ()=>{}}>
+                    {button1.title}
+                </button> 
+        } else {
+            _button1 = button1
+        }
+    }
 
-    const _button2 = button2 === undefined ?
-        <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button Two</button> :
-        <React.Fragment></React.Fragment>
+    if (button2 !== undefined) {
+        if (button2 && typeof button2.title === "string") {
+            _button12 = 
+                <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" 
+                    onClick={button2.onClick ? button2.onClick : ()=>{}}>
+                    {button2.title}
+                </button> 
+        } else {
+            _button2 = button2
+        }
+    }
 
     return (
         <section className={"text-gray-600 body-font " + className}>
@@ -26,20 +45,8 @@ export default function Hero1({ title, description, image, button1, button2, cla
                         _description
                     }
                     <div className="flex justify-center">
-                        { _button1 && typeof _button1.title === 'string' ?
-                            <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" 
-                                onClick={_button1.onClick ? _button1.onClick : ()=>{}}>
-                                {_button1.title}
-                            </button> :
-                            _button1
-                        }
-                        { _button2 && typeof _button2.title === 'string' ?
-                            <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg" 
-                                onClick={_button2.onClick ? _button2.onClick : ()=>{}}>
-                                {_button2.title}
-                            </button> :
-                            _button2
-                        }
+                        { _button1 }
+                        { _button2 }
                     </div>
                 </div>
                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
