@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './logo1'
-import { FacebookSvg, TwitterSvg, InstagramSvg, LinkedInSvg } from './todo/svgs'
+import { FacebookSvg, TwitterSvg, InstagramSvg, LinkedInSvg } from './svgs'
 
 export default function Footer4({ logo, copyright, facebook, twitter, instagram, linkedin, className }) {
     const _logo = logo || <Logo />
