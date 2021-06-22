@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Table from './table1'
 import Card from './card1'
+import Header from './header2'
 import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
 
 export default function Dashboard1({ navigation, menu }) {
+    const _navigation = navigation || <Header />
     const _menu = menu || [{
         category: "Manage",
         items: [{
