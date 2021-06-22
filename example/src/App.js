@@ -1,9 +1,9 @@
 import React from 'react'
-import { Dashboard1 as Dashboard } from 'react-tailblocks'
+import { Header2 as Header, Dashboard1 as Dashboard } from 'react-tailblocks'
 
 const App = () => {
   return (
-    <Dashboard />
+    <Dashboard navigation={<Header fixed={false} />} />
   )
 }
 
