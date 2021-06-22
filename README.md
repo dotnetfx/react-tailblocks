@@ -15,6 +15,21 @@ or
 yarn add react-tailblocks
 ```
 
+Then configure your tailwind.config.js file to include the react-tailwind library from your node_modules folder in the purge 
+array. To do this add './node_modules/react-tailblocks/**/*.{js,ts,jsx,tsx}' to the end of the list.
+
+```bash
+purge: [
+    './pages/**/*.{js,ts,jsx,tsx}', 
+    './components/**/*.{js,ts,jsx,tsx}',
+
+    // ...
+    
+    './node_modules/react-tailblocks/**/*.{js,ts,jsx,tsx}'
+  ],
+```
+
+
 ## Important
 Please be aware this componet library is still under development (see version number before considering usage)
 
