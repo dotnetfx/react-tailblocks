@@ -18,7 +18,7 @@ export default function Dashboard1({ navigation, menu }) {
                         <div className="w-full px-6 sm:w-1/2 xl:w-1/3">
                             <Card title="New Users" value="8,282"
                                 icon={
-                                    <div className="p-3 rounded-full bg-green-600 bg-opacity-75">
+                                    <div className="p-3 rounded-full bg-green-600 bg-opacity-75 text-white">
                                         <UserGroupIcon className="h-8 w-8" />
                                     </div>
                                 }
@@ -28,7 +28,7 @@ export default function Dashboard1({ navigation, menu }) {
                         <div className="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
                             <Card title="Total Orders" value="200,532"
                                 icon={
-                                    <div className="p-3 rounded-full bg-yellow-600 bg-opacity-75">
+                                    <div className="p-3 rounded-full bg-yellow-600 bg-opacity-75 text-white">
                                         <CollectionIcon className="h-8 w-8" />
                                     </div>
                                 }
@@ -38,7 +38,7 @@ export default function Dashboard1({ navigation, menu }) {
                         <div className="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
                             <Card title="Available Products" value="215,548"
                                 icon={
-                                    <div className="p-3 rounded-full bg-indigo-600 bg-opacity-75">
+                                    <div className="p-3 rounded-full bg-indigo-600 bg-opacity-75 text-white">
                                         <ShoppingBagIcon className="h-8 w-8" />
                                     </div>
                                 }
@@ -58,8 +58,7 @@ export default function Dashboard1({ navigation, menu }) {
             title: "Applications",
             icon: <CollectionIcon className="h-6 w-6" />,
             content: <div></div>
-        }
-        ]
+        }]
     }, {
         category: "Configure",
         items: [{
@@ -82,7 +81,7 @@ export default function Dashboard1({ navigation, menu }) {
 
     return (
         <div className="flex flex-col h-screen">
-            { _navigation }
+            {_navigation}
             <div className="flex h-full bg-gray-200">
                 <div className="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
                     <nav className="mt-10 text-gray-500">
