@@ -35,7 +35,8 @@ Please be aware this componet library is still under development (see version nu
 
 ## Documentation
 Detailed documentation is not yet available.  If you are using this early version of the component library
-please see the code for usage details.
+please see the code for usage details.  Each component has default parameters specified that will give you
+insight into its usage.
 
 ## Usage
 

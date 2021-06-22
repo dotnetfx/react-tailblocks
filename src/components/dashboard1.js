@@ -81,9 +81,9 @@ export default function Dashboard1({ navigation, menu }) {
     const [selected, setSelected] = useState(_menu[0].items[0]);
 
     return (
-        <div>
+        <div className="flex flex-col h-screen">
             { _navigation }
-            <div className="flex h-screen bg-gray-200">
+            <div className="flex h-full bg-gray-200">
                 <div className="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
                     <nav className="mt-10 text-gray-500">
                         {_menu.map((m, i) => {
