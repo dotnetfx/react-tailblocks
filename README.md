@@ -59,7 +59,7 @@ export default function Example() {
 ```
 
 ## Components
-Content3, Ecommerce1, Email1, Feature1, Footer4, Grid1, Header2, Hero1, Logo1, Statistics3
+Card1, Content3, Ecommerce1, Email1, Feature1, Footer4, Grid1, Header2, Hero1, Layout1, Logo1, Statistics3, Table1
 
 ## License
 
