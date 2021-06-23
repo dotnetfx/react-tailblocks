@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer1, Footer4 } from 'react-tailblocks'
+import { Footer1 } from 'react-tailblocks'
 
 const App = () => {
   return (

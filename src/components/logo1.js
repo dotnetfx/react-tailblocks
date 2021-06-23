@@ -1,12 +1,12 @@
 import React from 'react'
-import { AcademicCapIcon } from '@heroicons/react/outline'
+import { CubeIcon } from '@heroicons/react/outline'
 
 export default function Logo1({ title, image, inverse, className, href }) {
     const txtClass = inverse ? "text-white " : "text-gray-900 "
     const svgClass = inverse ? "text-blue-500 bg-white " : "text-white bg-blue-500 "
 
     const _title = title || "React Tailblocks"
-    const _svg = image || <AcademicCapIcon className={"w-10 h-10 rounded-full p-2 " + svgClass} />
+    const _svg = image || <CubeIcon className={"w-10 h-10 rounded-full p-2 " + svgClass} />
     const _href = href || "/"
 
     return (
