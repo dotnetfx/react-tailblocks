@@ -1,14 +1,8 @@
 To publish: yarn publish
 To update Github: yarn deploy
 
-Problems
---------
-1. Apps that use this library are purging the classes in production.  As a temporary work around the developer must specify an 
-   empty array for purge files in the tailwind.config.js file.  This needs to be fixed so that unused classes can be properly
-   purged in production.
-
-
 To Do Items
 -----------
-1.  [ ] - Dashboard layout is too high.  The whole screen scrolls up.  It should only scroll inside main area.  It does this because the
+1.  [x] - Dashboard layout is too high.  The whole screen scrolls up.  It should only scroll inside main area.  It does this because the
     header is at that top.
+2.  [ ] - Dashboard layout is not repsonive and doesn't display well on mobile devices.

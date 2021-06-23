@@ -1,9 +1,11 @@
 import React from 'react'
-import { Dashboard1 as Dashboard } from 'react-tailblocks'
+import { Footer1, Footer4 } from 'react-tailblocks'
 
 const App = () => {
   return (
-    <Dashboard />
+    <React.Fragment>
+      <Footer1 />
+    </React.Fragment>
   )
 }
 
