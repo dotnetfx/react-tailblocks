@@ -34,7 +34,7 @@ export default function Header2({ button, logo, menu, className, fixed, inverse 
     ] : menu
 
     const borderStyle = _menu && _menu.length ? "md:border-l md:border-white-400" : ""
-    const fixedStyle = fixed ? "fixed " : ""
+    const fixedStyle = fixed ? "md:fixed " : ""
     const inverseStyle = inverse ? "text-white bg-blue-500 " : "text-blue-500 bg-white "
 
     return (
