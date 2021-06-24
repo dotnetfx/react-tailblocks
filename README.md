@@ -15,12 +15,28 @@ or
 yarn add react-tailblocks
 ```
 
+Then configure your tailwind.config.js file to include the react-tailwind library from your node_modules folder in the purge 
+array. To do this add './node_modules/react-tailblocks/**/*.{js,ts,jsx,tsx}' to the end of the list.
+
+```bash
+purge: [
+    './pages/**/*.{js,ts,jsx,tsx}', 
+    './components/**/*.{js,ts,jsx,tsx}',
+
+    // ...
+    
+    './node_modules/react-tailblocks/**/*.{js,ts,jsx,tsx}'
+  ],
+```
+
+
 ## Important
 Please be aware this componet library is still under development (see version number before considering usage)
 
 ## Documentation
 Detailed documentation is not yet available.  If you are using this early version of the component library
-please see the code for usage details.
+please see the code for usage details.  Each component has default parameters specified that will give you
+insight into its usage.
 
 ## Usage
 
@@ -59,7 +75,7 @@ export default function Example() {
 ```
 
 ## Components
-Card1, Content3, Ecommerce1, Email1, Feature1, Footer4, Grid1, Header2, Hero1, Layout1, Logo1, Statistics3, Table1
+Card1, Content3, Ecommerce1, Email1, Feature1, Footer1, Footer4, Grid1, Header2, Hero1, Layout1, Logo1, Statistics3, Table1
 
 ## License
 
