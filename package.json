@@ -1,10 +1,6 @@
 {
   "name": "react-tailblocks",
-<<<<<<< HEAD
   "version": "0.0.25",
-=======
-  "version": "0.0.24",
->>>>>>> aa7c2b8bcbccd57720a33fe3a32ab3d7537bf2e7
   "description": "React components based on TailBlocks",
   "author": "dotnetfx",
   "license": "MIT",
