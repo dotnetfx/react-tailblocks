@@ -2,7 +2,7 @@ import React from 'react'
 import { CubeIcon } from '@heroicons/react/outline'
 import { FacebookSvg, TwitterSvg, InstagramSvg, LinkedInSvg } from './svgs'
 
-export default function Footer1({ title, description, svg, copyright, facebook, twitter, instagram, linkedin, menu }) {
+export default function Footer1({ title, description, svg, copyright, facebook, twitter, instagram, linkedin, menu, className }) {
     const _title = title || "Tailblocks"
     const _description = description || "Air plant banjo lyft occupy retro adaptogen indego"
     const _svg = svg || <CubeIcon className="w-10 h-10 rounded-full p-2 text-white bg-blue-500" />
@@ -48,7 +48,7 @@ export default function Footer1({ title, description, svg, copyright, facebook, 
     ]
 
     return (
-        <footer className="text-gray-600 body-font">
+        <footer className={"text-gray-600 body-font " + className}>
             <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
                 <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                     <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
@@ -84,39 +84,41 @@ export default function Footer1({ title, description, svg, copyright, facebook, 
                     ))}
                 </div>
             </div>
-            <div className="bg-gray-100">
-                <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-                    <p className="text-gray-500 text-sm text-center sm:text-left">{_copyright}
-                        {_twitter &&
-                            <span> -
-                                <a href={"https://twitter.com/" + _twitter} className="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@{_twitter}</a>
-                            </span>
-                        }
-                    </p>
-                    <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-                        {_facebook &&
-                            <a className="text-gray-500" href={"https://facebook.com/" + _facebook} target="_blank">
-                                <FacebookSvg />
-                            </a>
-                        }
-                        {_twitter &&
-                            <a className="ml-3 text-gray-500" href={"https://twitter.com/" + _twitter} target="_blank">
-                                <TwitterSvg />
-                            </a>
-                        }
-                        {_instagram &&
-                            <a className="ml-3 text-gray-500" href={"https://instagram.com/" + _instagram} target="_blank">
-                                <InstagramSvg />
-                            </a>
-                        }
-                        {_linkedin &&
-                            <a className="ml-3 text-gray-500" href={"https://linkedin.com/" + _linkedin} target="_blank">
-                                <LinkedInSvg />
-                            </a>
-                        }
-                    </span>
+            { _copyright &&
+                <div className="bg-gray-100">
+                    <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                        <p className="text-gray-500 text-sm text-center sm:text-left">{_copyright}
+                            {_twitter &&
+                                <span> -
+                                    <a href={"https://twitter.com/" + _twitter} className="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@{_twitter}</a>
+                                </span>
+                            }
+                        </p>
+                        <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                            {_facebook &&
+                                <a className="text-gray-500" href={"https://facebook.com/" + _facebook} target="_blank">
+                                    <FacebookSvg />
+                                </a>
+                            }
+                            {_twitter &&
+                                <a className="ml-3 text-gray-500" href={"https://twitter.com/" + _twitter} target="_blank">
+                                    <TwitterSvg />
+                                </a>
+                            }
+                            {_instagram &&
+                                <a className="ml-3 text-gray-500" href={"https://instagram.com/" + _instagram} target="_blank">
+                                    <InstagramSvg />
+                                </a>
+                            }
+                            {_linkedin &&
+                                <a className="ml-3 text-gray-500" href={"https://linkedin.com/" + _linkedin} target="_blank">
+                                    <LinkedInSvg />
+                                </a>
+                            }
+                        </span>
+                    </div>
                 </div>
-            </div>
+            }
         </footer>
     )
 }

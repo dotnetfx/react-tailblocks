@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './logo1'
-import { ArrowSmRightIcon } from '@heroicons/react/outline'
+import { ArrowSmRightIcon, MenuIcon } from '@heroicons/react/outline'
 
 export default function Header2({ button, logo, menu, className, fixed, inverse }) {
     const btnStyle = inverse ? "bg-gray-100 text-gray-600 hover:bg-gray-200" : "bg-blue-500 text-white hover:bg-blue-200"
