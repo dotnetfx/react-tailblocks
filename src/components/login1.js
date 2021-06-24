@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 
-export default function Login1({ title, logo, remember, forgot, onLogin, action, passwordLength, error, hidden }) {
+export default function Login1({ title, logo, remember, forgotUrl, onLogin, action, passwordLength, error, hidden }) {
 	const [ email, setEmail ] = useState(null)
 	const [ password, setPassword ] = useState(null)
 	const [ rememberMe, setRememberMe ] = useState(false)
 	const [ errorMsg, setErrorMsg ] = useState(error)
 
 	const _pwlen = passwordLength || 1
-	const _remember = remember || true
-	const _forgot = forgot
+	const _remember = remember && true
+	const _forgot = forgotUrl
 	const _title = title || "Sign Into Your Account"
 	const _logo = logo || <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg" alt="Workflow" />
 
@@ -17,7 +17,7 @@ export default function Login1({ title, logo, remember, forgot, onLogin, action,
 		if (email && password) {
 			if (password.length >= _pwlen && email.includes("@") && email.includes(".")) return true
 
-			setErrorMsg(`Password must have at least ${_pwlen} characters and email address must be in a valid format.`)
+			setErrorMsg(`Password must have at least ${_pwlen} characters and the email address must be in a valid format.`)
 			return false
 		}
 
