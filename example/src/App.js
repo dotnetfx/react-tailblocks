@@ -5,7 +5,7 @@ const App = () => {
   return (
     <React.Fragment>
       <Header2 fixed />
-      <Login1 />
+      <Login1 onLogin={(value) => console.log(value)} passwordLength={8} forgot="#" />
       <Footer1 className="bg-blue-100" />
     </React.Fragment>
   )
