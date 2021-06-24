@@ -5,7 +5,10 @@ export { default as Ecommerce1 } from './ecommerce1'
 export { default as Email1 } from './email1'
 export { default as Feature1 } from './feature1'
 export { default as Footer1 } from './footer1'
+<<<<<<< HEAD
 export { default as Login1 } from './login1'
+=======
+>>>>>>> aa7c2b8bcbccd57720a33fe3a32ab3d7537bf2e7
 export { default as Footer4 } from './footer4'
 export { default as Grid1 } from './grid1'
 export { default as Header2 } from './header2'

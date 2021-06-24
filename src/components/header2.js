@@ -5,6 +5,12 @@ import { ArrowSmRightIcon, MenuIcon } from '@heroicons/react/outline'
 export default function Header2({ button, logo, menu, className, fixed, inverse }) {
     const btnStyle = inverse ? "bg-gray-100 text-gray-600 hover:bg-gray-200" : "bg-blue-500 text-white hover:bg-blue-200"
 
+<<<<<<< HEAD
+=======
+export default function Header2({ button, logo, menu, className, fixed, inverse }) {
+    const btnStyle = inverse ? "bg-gray-100 text-gray-600 hover:bg-gray-200" : "bg-blue-500 text-white hover:bg-blue-200"
+
+>>>>>>> aa7c2b8bcbccd57720a33fe3a32ab3d7537bf2e7
     let _button = 
         <button className={"inline-flex items-center border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0 " + btnStyle}>
                 Button
