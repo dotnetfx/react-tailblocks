@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
+import { LockClosedIcon, CubeIcon } from '@heroicons/react/outline'
 
 export default function Register1({ title, logo, loginUrl, onRegister, passwordLength }) {
 	const [email, setEmail] = useState(null)
 	const [password, setPassword] = useState(null)
-	const [errorMsg, setErrorMsg] = useState(error)
+	const [errorMsg, setErrorMsg] = useState()
 
 	const _pwlen = passwordLength || 1
 	const _loginUrl = loginUrl
 	const _title = title || "Register a New Account"
-	const _logo = logo || <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg" alt="Workflow" />
+	const _logo = logo || <CubeIcon className="p-2 mx-auto w-16 h-16 text-white bg-blue-500 rounded-full" />
 
 	const isValid = () => {
 		setErrorMsg(null)
@@ -50,14 +51,7 @@ export default function Register1({ title, logo, loginUrl, onRegister, passwordL
 						</div>
 					</div>
 
-					<div className="flex items-center justify-between">
-						{_forgot &&
-							<div className="text-sm">
-								<a href={_forgot} className="font-medium text-blue-600 hover:text-blue-500">
-									Forgot your password?
-								</a>
-							</div>
-						}
+					<div className="flex items-center justify-center">
 						{_loginUrl &&
 							<div className="text-sm">
 								<a href={_loginUrl} className="font-medium text-blue-600 hover:text-blue-500">
@@ -73,14 +67,12 @@ export default function Register1({ title, logo, loginUrl, onRegister, passwordL
 					<div>
 						<button type="button" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 
 						hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-							onClick={() => { if (onLogin && isValid()) onLogin({ username: email, password, remember: rememberMe }) }}
+							onClick={() => { if (onRegister && isValid()) onRegister({ username: email, password }) }}
 						>
 							<span className="absolute left-0 inset-y-0 flex items-center pl-3">
-								<svg className="h-5 w-5 text-blue-500 group-hover:text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-									<path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-								</svg>
+								<LockClosedIcon className="h-5 w-5 text-blue-500 group-hover:text-blue-400"/>
 							</span>
-							Sign in
+							Sign Up
 						</button>
 					</div>
 				</form>

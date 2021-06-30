@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { LockClosedIcon, CubeIcon } from '@heroicons/react/outline'
 
 export default function Login1({ title, logo, remember, forgotUrl, registerUrl, onLogin, action, passwordLength, error, hidden }) {
 	const [email, setEmail] = useState(null)
@@ -11,7 +12,7 @@ export default function Login1({ title, logo, remember, forgotUrl, registerUrl, 
 	const _forgot = forgotUrl
 	const _register = registerUrl
 	const _title = title || "Sign Into Your Account"
-	const _logo = logo || <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg" alt="Workflow" />
+	const _logo = logo || <CubeIcon className="p-2 mx-auto w-16 h-16 text-white bg-blue-500 rounded-full" />
 
 	const isValid = () => {
 		setErrorMsg(null)
@@ -93,9 +94,7 @@ export default function Login1({ title, logo, remember, forgotUrl, registerUrl, 
 							onClick={() => { if (onLogin && isValid()) onLogin({ username: email, password, remember: rememberMe }) }}
 						>
 							<span className="absolute left-0 inset-y-0 flex items-center pl-3">
-								<svg className="h-5 w-5 text-blue-500 group-hover:text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-									<path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-								</svg>
+								<LockClosedIcon className="h-5 w-5 text-blue-500 group-hover:text-blue-400"/>
 							</span>
 							Sign in
 						</button>
