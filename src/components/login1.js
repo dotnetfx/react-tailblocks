@@ -34,7 +34,7 @@ export default function Login1({ title, logo, remember, forgotUrl, registerUrl, 
 					<div className="mx-auto">{_logo}</div>
 					<h2 className="mt-6 text-center text-3xl font-medium text-gray-900">{_title}</h2>
 				</div>
-				<form className="mt-8 space-y-6" action="#" method="POST" action={action}>
+				<form className="mt-8 space-y-6" method="POST" action={action}>
 					{hidden && hidden.map(h => (h))}
 					<div className="rounded-md shadow-sm -space-y-px">
 						<div>
