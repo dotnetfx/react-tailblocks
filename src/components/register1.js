@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { LockClosedIcon, CubeIcon } from '@heroicons/react/outline'
 
 export default function Register1({ title, logo, loginUrl, onRegister, passwordLength, action, error }) {
