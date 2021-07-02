@@ -14,6 +14,10 @@ export default function Login1({ title, logo, remember, forgotUrl, registerUrl, 
 	const _title = title || "Sign Into Your Account"
 	const _logo = logo || <CubeIcon className="p-2 mx-auto w-16 h-16 text-white bg-blue-500 rounded-full" />
 
+	useEffect(() => {
+		setErrorMsg(error)
+	}, [error])
+
 	const isValid = () => {
 		setErrorMsg(null)
 		if (email && password) {

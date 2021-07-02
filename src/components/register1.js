@@ -11,6 +11,10 @@ export default function Register1({ title, logo, loginUrl, onRegister, passwordL
 	const _title = title || "Register for an Account"
 	const _logo = logo || <CubeIcon className="p-2 mx-auto w-16 h-16 text-white bg-blue-500 rounded-full" />
 
+	useEffect(() => {
+		setErrorMsg(error)
+	}, [error])
+
 	const isValid = () => {
 		setErrorMsg(null)
 		if (email && password) {

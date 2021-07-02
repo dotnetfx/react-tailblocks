@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { LockClosedIcon, CubeIcon } from '@heroicons/react/outline'
 
-export default function Register1({ title, logo, loginUrl, onReset, action, error }) {
+export default function Reset1({ title, logo, loginUrl, onReset, action, error }) {
 	const [email, setEmail] = useState(null)
 	const [errorMsg, setErrorMsg] = useState(error)
-
+	
 	const _loginUrl = loginUrl
 	const _title = title || "Reset Account Password"
 	const _logo = logo || <CubeIcon className="p-2 mx-auto w-16 h-16 text-white bg-blue-500 rounded-full" />
+
+	useEffect(() => {
+		setErrorMsg(error)
+	}, [error])
 
 	const isValid = () => {
 		setErrorMsg(null)
@@ -60,7 +64,7 @@ export default function Register1({ title, logo, loginUrl, onReset, action, erro
 							onClick={() => { if (onReset && isValid()) onReset({ username: email }) }}
 						>
 							<span className="absolute left-0 inset-y-0 flex items-center pl-3">
-								<LockClosedIcon className="h-5 w-5 text-blue-500 group-hover:text-blue-400"/>
+								<LockClosedIcon className="h-5 w-5 text-blue-500 group-hover:text-blue-400" />
 							</span>
 							Reset
 						</button>
