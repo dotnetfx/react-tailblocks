@@ -73,8 +73,7 @@ export default function Dashboard1({ navigation, menu }) {
             title: "Forms",
             icon: <TemplateIcon className="h-6 w-6" />,
             content: <div></div>
-        }
-        ]
+        }]
     }]
 
     const [selected, setSelected] = useState(_menu[0].items[0]);

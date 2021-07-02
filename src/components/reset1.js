@@ -1,26 +1,24 @@
 import React, { useState } from 'react'
 import { LockClosedIcon, CubeIcon } from '@heroicons/react/outline'
 
-export default function Register1({ title, logo, loginUrl, onRegister, passwordLength, action, error }) {
+export default function Register1({ title, logo, loginUrl, onReset, action, error }) {
 	const [email, setEmail] = useState(null)
-	const [password, setPassword] = useState(null)
 	const [errorMsg, setErrorMsg] = useState(error)
 
-	const _pwlen = passwordLength || 1
 	const _loginUrl = loginUrl
-	const _title = title || "Register for an Account"
+	const _title = title || "Reset Account Password"
 	const _logo = logo || <CubeIcon className="p-2 mx-auto w-16 h-16 text-white bg-blue-500 rounded-full" />
 
 	const isValid = () => {
 		setErrorMsg(null)
-		if (email && password) {
-			if (password.length >= _pwlen && email.includes("@") && email.includes(".")) return true
+		if (email) {
+			if (email.includes("@") && email.includes(".")) return true
 
-			setErrorMsg(`Password must have at least ${_pwlen} characters and the email address must be in a valid format.`)
+			setErrorMsg(`Email address must be in a valid format.`)
 			return false
 		}
 
-		setErrorMsg("Email and password are required.")
+		setErrorMsg("Email is required.")
 		return false
 	}
 
@@ -41,14 +39,6 @@ export default function Register1({ title, logo, loginUrl, onRegister, passwordL
 								onChange={(e) => { setEmail(e.target.value) }}
 							/>
 						</div>
-						<div>
-							<label htmlFor="password" className="sr-only">Password</label>
-							<input id="password" name="password" type="password" autoComplete="current-password" required className="appearance-none rounded-none relative block w-full px-3 
-							py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 
-							sm:text-sm" placeholder="Password"
-								onChange={(e) => { setPassword(e.target.value) }}
-							/>
-						</div>
 					</div>
 
 					<div className="flex items-center justify-center">
@@ -67,12 +57,12 @@ export default function Register1({ title, logo, loginUrl, onRegister, passwordL
 					<div>
 						<button type={action ? "submit" : "button"} className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 
 						hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-							onClick={() => { if (onRegister && isValid()) onRegister({ username: email, password }) }}
+							onClick={() => { if (onReset && isValid()) onReset({ username: email }) }}
 						>
 							<span className="absolute left-0 inset-y-0 flex items-center pl-3">
 								<LockClosedIcon className="h-5 w-5 text-blue-500 group-hover:text-blue-400"/>
 							</span>
-							Sign Up
+							Reset
 						</button>
 					</div>
 				</form>
