@@ -1,7 +1,8 @@
 import React from 'react'
 import { ArrowSmRightIcon, EyeIcon, ChatIcon } from '@heroicons/react/outline'
 
-export default function Blog1({ items, className }) {
+export default function Blog1({ items, className, cardClass }) {
+    const _cardClass = cardClass || "md:w-1/3"
     const _items = items || [
         {
             title: "The Catalyzer",
@@ -31,11 +32,11 @@ export default function Blog1({ items, className }) {
     ]
 
     return (
-        <section className={"text-gray-600 body-font" + className}>
+        <section className={"text-gray-600 body-font " + className}>
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap -m-4">
                     { _items.map((d, i) => (
-                            <div className="p-4 md:w-1/3" key={i}>
+                            <div className={"p-4 " + _cardClass} key={i}>
                                 <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                     { typeof d.image === "string" ?
                                         <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={d.image} alt="blog" /> :
@@ -62,13 +63,13 @@ export default function Blog1({ items, className }) {
                                                 d.more
                                             }
                                             { typeof d.views === "string" ?
-                                                <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                                                <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1">
                                                     <EyeIcon className="h-5 w-5" />{d.views}
                                                 </span> :
                                                 d.views
                                             }
                                             { typeof d.comments === "string" ?
-                                                <span className="text-gray-400 inline-flex items-center leading-none text-sm">
+                                                <span className="text-gray-400 inline-flex items-center leading-none text-sm pl-3 border-l-2 border-gray-200">
                                                     <ChatIcon className="h-5 w-5" />{d.comments}
                                                 </span> :
                                                 d.comments
