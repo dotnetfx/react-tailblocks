@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Table from './table1'
 import Card from './card1'
 import Header from './header2'
 import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
 
-export default function Dashboard1({ navigation, menu }) {
+export default function Dashboard1({ navigation, menu, contentClass, selectedItem }) {
+    const _contentClass = contentClass || "bg-gray-200 px-6 py-8"
     const _navigation = navigation || <Header />
     const _menu = menu || [{
         category: "Manage",
@@ -13,6 +14,7 @@ export default function Dashboard1({ navigation, menu }) {
             icon: <ChartPieIcon className="h-6 w-6" />,
             content:
                 <div>
+                    <h3 className="text-gray-700 text-3xl font-medium">Dashboard</h3>
                     <div className="mt-8"></div>
                     <div className="flex flex-wrap -mx-6">
                         <div className="w-full px-6 sm:w-1/2 xl:w-1/3">
@@ -51,32 +53,55 @@ export default function Dashboard1({ navigation, menu }) {
             icon: <UserGroupIcon className="h-6 w-6" />,
             content:
                 <div>
+                    <h3 className="text-gray-700 text-3xl font-medium">Users</h3>
                     <div className="mt-8"></div>
                     <Table />
                 </div>
         }, {
             title: "Applications",
             icon: <CollectionIcon className="h-6 w-6" />,
-            content: <div></div>
+            content: 
+                <div>
+                    <h3 className="text-gray-700 text-3xl font-medium">Applications</h3>
+                </div>
         }]
     }, {
         category: "Configure",
         items: [{
             title: "Elements",
             icon: <CubeIcon className="h-6 w-6" />,
-            content: <div></div>
+            content: 
+                <div>
+                    <h3 className="text-gray-700 text-3xl font-medium">Elements</h3>
+                </div>
         }, {
             title: "Tables",
             icon: <TableIcon className="h-6 w-6" />,
-            content: <div></div>
+            content: 
+                <div>
+                    <h3 className="text-gray-700 text-3xl font-medium">Tables</h3>
+                </div>
         }, {
             title: "Forms",
             icon: <TemplateIcon className="h-6 w-6" />,
-            content: <div></div>
+            content:  
+                <div>
+                    <h3 className="text-gray-700 text-3xl font-medium">Forms</h3>
+                </div>
         }]
-    }]
+    }, {
+        items: [{
+          content:
+            <div>
+              <h3 className="text-gray-700 text-3xl font-medium">Profile</h3>
+            </div>
+        }]
+      }]
 
     const [selected, setSelected] = useState(_menu[0].items[0]);
+    useEffect(() => {
+        if (selectedItem) setSelected(selectedItem)
+    }, [])
 
     return (
         <div className="flex flex-col h-screen">
@@ -85,7 +110,7 @@ export default function Dashboard1({ navigation, menu }) {
                 <div className="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
                     <nav className="mt-10 text-gray-500">
                         {_menu.map((m, i) => {
-                            return (
+                            return ( m.category && 
                                 <div key={i} className="px-4 pb-8">
                                     <h2 className="text-lg">{m.category}</h2>
                                     {m.items.map((t, j) => {
@@ -106,11 +131,8 @@ export default function Dashboard1({ navigation, menu }) {
                 </div>
 
                 <div className="flex-1 flex flex-col overflow-hidden">
-                    <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
-                        <div className="mx-auto px-6 py-8">
-                            <h3 className="text-gray-700 text-3xl font-medium">{selected.title}</h3>
-                            {selected.content}
-                        </div>
+                    <main className={"flex-1 overflow-x-hidden overflow-y-auto " + _contentClass}>
+                        {selected.content}
                     </main>
                 </div>
             </div>
