@@ -98,10 +98,11 @@ export default function Dashboard1({ navigation, menu, contentClass, selectedIte
         }]
       }]
 
-    const [selected, setSelected] = useState(_menu[0].items[0]);
+    const [selected, setSelected] = useState();
     useEffect(() => {
         if (selectedItem) setSelected(selectedItem)
-    }, [])
+        else setSelected(_menu[0].items[0])
+    }, [selectedItem])
 
     return (
         <div className="flex flex-col h-screen">

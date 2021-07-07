@@ -3,6 +3,40 @@ import { Blog1, Dashboard1, Header2, Footer1, Login1, Pricing1, Register1, Reset
 import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
 
 const App = () => {
+  const [selected, setSelected] = useState();
+
+  const menu = [{
+    category: "Configure",
+    items: [{
+      title: "Elements",
+      icon: <CubeIcon className="h-6 w-6" />,
+      content:
+        <div>
+          <h3 className="text-gray-700 text-3xl font-medium">Elements</h3>
+        </div>
+    }, {
+      title: "Tables",
+      icon: <TableIcon className="h-6 w-6" />,
+      content:
+        <div>
+          <h3 className="text-gray-700 text-3xl font-medium">Tables</h3>
+        </div>
+    }, {
+      title: "Forms",
+      icon: <TemplateIcon className="h-6 w-6" />,
+      content:
+        <div>
+          <h3 className="text-gray-700 text-3xl font-medium">Forms</h3>
+        </div>
+    }]
+  }, {
+    items: [{
+      content:
+        <div>
+          <h3 className="text-gray-700 text-3xl font-medium">Profile</h3>
+        </div>
+    }]
+  }]
 
   return (
     <React.Fragment>
@@ -19,7 +53,16 @@ const App = () => {
 
       <Footer1 />
 
-      <Dashboard1 />
+      <button type="button" onClick={() => {
+        setSelected(menu[1].items[0])
+      }}>
+        Test Button
+      </button>
+
+      <Dashboard1
+        selectedItem={selected}
+        menu={menu}
+      />
     </React.Fragment>
   )
 }
