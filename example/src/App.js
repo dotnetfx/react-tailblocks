@@ -38,6 +38,23 @@ const App = () => {
     }]
   }]
 
+  const menu1 = [{
+      category: "EntrePay",
+      items: [{
+          title: "Dashboard",
+          icon: <ChartPieIcon className="h-6 w-6" />,
+          content:
+              <p>Hello worlds</p>
+      }]
+  }, {
+      items: [{
+          content: 
+              <div>
+                  <h3 className="text-gray-700 text-3xl font-medium">Profile</h3>
+              </div>
+      }]
+  }]
+
   return (
     <React.Fragment>
       <Header2 fixed />
@@ -61,7 +78,7 @@ const App = () => {
 
       <Dashboard1
         selectedItem={selected}
-        menu={menu}
+        menu={menu1}
       />
     </React.Fragment>
   )

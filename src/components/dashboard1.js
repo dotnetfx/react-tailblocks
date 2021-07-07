@@ -98,10 +98,9 @@ export default function Dashboard1({ navigation, menu, contentClass, selectedIte
         }]
       }]
 
-    const [selected, setSelected] = useState();
+    const [selected, setSelected] = useState(_menu[0].items[0]);
     useEffect(() => {
         if (selectedItem) setSelected(selectedItem)
-        else setSelected(_menu[0].items[0])
     }, [selectedItem])
 
     return (
