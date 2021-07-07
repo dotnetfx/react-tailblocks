@@ -15,7 +15,7 @@ export default function Blog1({ items, className, cardClass }) {
         }, {
             title: "The 400 Blows",
             category: "Category",
-            description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
+            description: "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat. Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat. Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.",
             image: "https://dummyimage.com/720x400",
             more: "Learn More",
             views: "1200",
@@ -38,24 +38,24 @@ export default function Blog1({ items, className, cardClass }) {
                     { _items.map((d, i) => (
                             <div className={"p-4 " + _cardClass} key={i}>
                                 <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                                    { typeof d.image === "string" ?
-                                        <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={d.image} alt="blog" /> :
-                                        d.image
-                                    }
-                                    <div className="p-6">
-                                        { typeof d.category === "string " ?
-                                            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{d.category}</h2> :
+                                    <div className="flex flex-col h-full">
+                                        { typeof d.image === "string" ?
+                                            <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={d.image} alt="blog" /> :
+                                            d.image
+                                        }
+                                        { typeof d.category === "string" ?
+                                            <h2 className="px-6 pt-4 uppercase tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{d.category}</h2> :
                                             d.category    
                                         }
                                         { typeof d.title === "string" ? 
-                                            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{d.title}</h1> :
+                                            <h1 className="px-6 title-font text-lg font-medium text-gray-900 mb-3">{d.title}</h1> :
                                             d.title
                                         }
                                         { typeof d.description === "string" ?
-                                            <p className="leading-relaxed mb-3">{d.description}</p> :
+                                            <p className="px-6 leading-relaxed mb-3 flex-grow">{d.description}</p> :
                                             d.description
                                         }
-                                        <div className="flex items-center flex-wrap ">
+                                        <div className="flex items-center flex-wrap px-6 py-4">
                                             { typeof d.more === "string" ?
                                                 <a className="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">{d.more}
                                                     <ArrowSmRightIcon className="ml-4 h-5 w-5" />
