@@ -183,12 +183,14 @@ export default function Form1({ className, panels }) {
                             </div>
                         </div>
                     </div>
-
-                    <div className="hidden sm:block" aria-hidden="true">
-                        <div className="py-5">
-                            <div className="border-t border-gray-200"></div>
+                    
+                    { (i+1 < _panels.length) &&
+                        <div className="hidden sm:block" aria-hidden="true">
+                            <div className="py-8">
+                                <div className="border-t border-gray-200"></div>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </React.Fragment>
             ))}
         </div>
