@@ -161,7 +161,7 @@ export default function Form1({ className, panels }) {
     }]
 
     return (
-        <div className={"bg-gray-200 p-8 " + className}>
+        <div className={"bg-gray-100 p-8 " + className}>
             { _panels.map((p, i) => (
                 <React.Fragment key={i}>
                     <div>
