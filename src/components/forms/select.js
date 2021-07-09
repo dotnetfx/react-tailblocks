@@ -15,8 +15,8 @@ export default function Select({ name, label, className, inputClass, labelClass,
             >
                 {children}
             </select>
-            <p className={"text-red-400 font-medium text-sm" + errorClass}>{errors[name]?.message}</p>
-            <p className={"text-gray-400 font-medium text-sm" + descriptionClass}>{description}</p>
+            <p className={"text-red-400 font-medium text-sm " + errorClass}>{errors[name]?.message}</p>
+            <p className={"text-gray-400 font-medium text-sm " + descriptionClass}>{description}</p>
         </div>
     )
 }
