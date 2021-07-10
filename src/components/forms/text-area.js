@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFormContext } from "react-hook-form";
 
-export default function TextArea({ name, label, value, placeHolder, className, inputClass, labelClass, errorClass, descriptionClass, disabled, options, maxLength, description }) {
+export default function TextArea({ name, label, value, placeHolder, className, inputClass, labelClass, errorClass, descriptionClass, disabled, options, maxLength, description, onChange }) {
     const { register, formState:{ errors } } = useFormContext()
 
     return (
@@ -10,7 +10,7 @@ export default function TextArea({ name, label, value, placeHolder, className, i
                 className={"block text-sm font-medium text-gray-600 " + labelClass}>
                     {label}
             </label>
-            <textarea id={name} name={name} {...register(name, options)} value={value} placeholder={placeHolder} disabled={disabled} maxLength={maxLength}
+            <textarea id={name} name={name} {...register(name, options)} value={value} placeholder={placeHolder} disabled={disabled} maxLength={maxLength} onChange={onChange}
                 className={"text-gray-700 p-3 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300" + inputClass} 
             />
             <p className={"text-red-400 font-medium text-sm " + errorClass}>{errors[name]?.message}</p>

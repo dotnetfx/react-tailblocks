@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFormContext } from "react-hook-form";
 
-export default function Select({ name, label, className, inputClass, labelClass, errorClass, descriptionClass, disabled, options, size, children, description }) {
+export default function Select({ name, label, className, inputClass, labelClass, errorClass, descriptionClass, disabled, options, size, children, description, onChange }) {
     const { register, formState:{ errors } } = useFormContext()
 
     return (
@@ -10,7 +10,7 @@ export default function Select({ name, label, className, inputClass, labelClass,
                 className={"block text-sm font-medium text-gray-600 " + labelClass}>
                     {label}
             </label>
-            <select id={name} name={name} {...register(name, options)} disabled={disabled} size={size}
+            <select id={name} name={name} {...register(name, options)} disabled={disabled} size={size} onChange={onChange}
                 className={"text-gray-700 p-3 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300" + inputClass} 
             >
                 {children}
