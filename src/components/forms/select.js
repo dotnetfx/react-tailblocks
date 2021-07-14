@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFormContext } from "react-hook-form";
 
-export default function Select({ name, label, className, inputClass, labelClass, errorClass, descriptionClass, disabled, options, size, children, description, onChange }) {
-    const { register, formState:{ errors } } = useFormContext()
+export default function Select({ name, label, className, inputClass, labelClass, errorClass, descriptionClass, disabled, options, items, size, description, onChange }) {
+    const _items = items || []
+    const { register, formState:{ errors }, getValues, editing } = useFormContext()
 
     return (
         <div className={"mt-2 " + className}>
@@ -10,11 +11,17 @@ export default function Select({ name, label, className, inputClass, labelClass,
                 className={"block text-sm font-medium text-gray-600 " + labelClass}>
                     {label}
             </label>
-            <select id={name} name={name} {...register(name, options)} disabled={disabled} size={size} onChange={onChange}
-                className={"text-gray-700 p-3 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300" + inputClass} 
-            >
-                {children}
-            </select>
+            { editing ?
+                <select id={name} name={name} {...register(name, options)} disabled={disabled} size={size} onChange={onChange}
+                    className={"text-gray-700 p-3 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300" + inputClass}
+                >
+                { items.map((o, i) => {
+                    o.selected = getValues(name) === o.title
+                    return <option key={i} {...o} >{o.title}</option>
+                })}
+                </select> :
+                <p>{getValues(name)}</p>
+            }
             <p className={"text-red-400 font-medium text-sm " + errorClass}>{errors[name]?.message}</p>
             <p className={"text-gray-400 font-medium text-sm " + descriptionClass}>{description}</p>
         </div>
