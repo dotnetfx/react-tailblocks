@@ -11,7 +11,7 @@ export default function Form1({ className, panels, auto, collapsible }) {
     
     const _panels = panels || [
         {
-            label: <h2 className="text-lg leading-6 text-gray-600">Profile</h2>,
+            label: <h3 className="text-md font-medium leading-6 text-gray-600">Profile</h3>,
             title: <h3 className="text-lg font-medium leading-6 text-gray-900">Profile</h3>,
             description:
                 <p className="mt-1 text-sm text-gray-600">
@@ -66,7 +66,7 @@ export default function Form1({ className, panels, auto, collapsible }) {
                 </Form>
         },
         {
-            label: <h2 className="text-lg leading-6 text-gray-600">Personal Information</h2>,
+            label: <h3 className="text-md font-medium leading-6 text-gray-600">Personal Information</h3>,
             title: <h3 className="text-lg font-medium leading-6 text-gray-900">Personal Information</h3>,
             description:
                 <p className="mt-1 text-sm text-gray-600">
@@ -120,7 +120,7 @@ export default function Form1({ className, panels, auto, collapsible }) {
 
         },
         {
-            label: <h2 className="text-lg leading-6 text-gray-600">Notifications</h2>,
+            label: <h3 className="text-md font-medium leading-6 text-gray-600">Notifications</h3>,
             title: <h3 className="text-lg font-medium leading-6 text-gray-900">Notifications</h3>,
             description:
                 <p className="mt-1 text-sm text-gray-600">
@@ -184,7 +184,7 @@ export default function Form1({ className, panels, auto, collapsible }) {
                                 <div className="shadow overflow-hidden sm:rounded-md">
                                     <div className="bg-white">
                                         { _collapsible && 
-                                            <div className="p-4 w-full flex justify-between">
+                                            <div className={"p-4 w-full flex border-b border-gray-100 " + (p.label ? "justify-between" : "justify-end") }>
                                                 {p.label}
                                                 { collapsed[i] ?
                                                     <ChevronDownIcon className="h-4 w-4 text-gray-400 cursor-pointer"
