@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Form from './forms/form'
 import Input from './forms/input'
 import TextArea from './forms/text-area'
 import Select from './forms/select'
-import { UserCircleIcon, PhotographIcon } from '@heroicons/react/outline'
+import { UserCircleIcon, PhotographIcon, ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/outline'
 
-export default function Form1({ className, panels }) {
+export default function Form1({ className, panels, auto, collapsible }) {
+    const _collapsible = collapsible === undefined ? true : collapsible
+    const _auto = auto === undefined ? true : auto
+    
     const _panels = panels || [
         {
+            label: <h2 className="text-lg leading-6 text-gray-600">Profile</h2>,
             title: <h3 className="text-lg font-medium leading-6 text-gray-900">Profile</h3>,
             description:
                 <p className="mt-1 text-sm text-gray-600">
                     This information will be displayed publicly so be careful what you share.
                 </p>,
             content:
-                <Form onSubmit={(data) => { console.log(data) }} data={{about:""}}>
+                <Form onSubmit={(data) => { console.log(data) }} data={{ about: "" }}>
                     <div className="px-4 sm:p-6">
                         <div className="grid grid-cols-3 gap-6">
                             <div className="col-span-3 sm:col-span-2">
@@ -60,18 +64,21 @@ export default function Form1({ className, panels }) {
                         </div>
                     </div>
                 </Form>
-        }, 
+        },
         {
+            label: <h2 className="text-lg leading-6 text-gray-600">Personal Information</h2>,
             title: <h3 className="text-lg font-medium leading-6 text-gray-900">Personal Information</h3>,
             description:
                 <p className="mt-1 text-sm text-gray-600">
                     Use a permanent address where you can receive mail.
                 </p>,
             content:
-                <Form onSubmit={(data) => { console.log(data) }} options={ { defaultValues: {
-                    firstName: "Mike", lastName: "Smith", email: "mike@domain.com", country: "United States",
-                    street: "123 N Place", city: "Rock Spring", state: "WY", postal: "82901"
-                }}}>
+                <Form onSubmit={(data) => { console.log(data) }} options={{
+                    defaultValues: {
+                        firstName: "Mike", lastName: "Smith", email: "mike@domain.com", country: "United States",
+                        street: "123 N Place", city: "Rock Spring", state: "WY", postal: "82901"
+                    }
+                }}>
                     <div className="grid grid-cols-6 gap-6 px-4 sm:p-6">
                         <div className="col-span-6 sm:col-span-3">
                             <Input name="firstName" label="First name" />
@@ -111,17 +118,20 @@ export default function Form1({ className, panels }) {
                     </div>
                 </Form>
 
-        }, 
+        },
         {
-             title: <h3 className="text-lg font-medium leading-6 text-gray-900">Notifications</h3>,
+            label: <h2 className="text-lg leading-6 text-gray-600">Notifications</h2>,
+            title: <h3 className="text-lg font-medium leading-6 text-gray-900">Notifications</h3>,
             description:
                 <p className="mt-1 text-sm text-gray-600">
                     Decide which communications you'd like to receive and how.
                 </p>,
-            content: 
-                <Form onSubmit={(data) => { console.log(data) }} options={{ defaultValues: { 
-                    comments: true, candidates: false, offers: true
-                } }}>
+            content:
+                <Form onSubmit={(data) => { console.log(data) }} options={{
+                    defaultValues: {
+                        comments: true, candidates: false, offers: true
+                    }
+                }}>
                     <div className="px-4 sm:p-6">
                         <fieldset>
                             <legend className="text-base font-medium text-gray-900">By Email</legend>
@@ -147,6 +157,11 @@ export default function Form1({ className, panels }) {
         }
     ]
 
+    const items = _panels.map(() => !_collapsible ? false : _auto)
+    if (_auto) items[0] = false
+
+    const [collapsed, setCollapsed] = useState(items)
+
     return (
         <div className={"bg-gray-100 p-8 " + className}>
             {_panels.map((p, i) => (
@@ -167,8 +182,29 @@ export default function Form1({ className, panels }) {
                             </div>
                             <div className="mt-5 md:mt-0 md:col-span-2">
                                 <div className="shadow overflow-hidden sm:rounded-md">
-                                    <div className="pt-5 bg-white space-y-6">
-                                        {p.content}
+                                    <div className="bg-white">
+                                        { _collapsible && 
+                                            <div className="p-4 w-full flex justify-between">
+                                                {p.label}
+                                                { collapsed[i] ?
+                                                    <ChevronDownIcon className="h-4 w-4 text-gray-400 cursor-pointer"
+                                                        onClick={() => { 
+                                                            const c = !_auto ? collapsed.map(x => x) : _panels.map(() => true)
+                                                            c[i] = false
+                                                            setCollapsed(c)
+                                                        }}
+                                                    /> :
+                                                    <ChevronUpIcon className="h-4 w-4 text-gray-400 cursor-pointer"
+                                                        onClick={() => { 
+                                                            const c = !_auto ? collapsed.map(x => x) : _panels.map(() => true)
+                                                            c[i] = true
+                                                            setCollapsed(c)
+                                                        }}
+                                                    />
+                                                }
+                                            </div>
+                                        }
+                                        {!collapsed[i] && p.content}
                                     </div>
                                 </div>
                             </div>
