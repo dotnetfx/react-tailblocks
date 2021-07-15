@@ -18,7 +18,7 @@ export default function Form1({ className, panels, auto, collapsible }) {
                     This information will be displayed publicly so be careful what you share.
                 </p>,
             content:
-                <Form onSubmit={(data) => { console.log(data) }} data={{ about: "" }}>
+                <Form onSubmit={(data) => { console.log(data) }}>
                     <div className="px-4 sm:p-6">
                         <div className="grid grid-cols-3 gap-6">
                             <div className="col-span-3 sm:col-span-2">
@@ -163,7 +163,7 @@ export default function Form1({ className, panels, auto, collapsible }) {
     const [collapsed, setCollapsed] = useState(items)
 
     return (
-        <div className={"bg-gray-100 p-8 " + className}>
+        <div className={"bg-gray-100 " + className}>
             {_panels.map((p, i) => (
                 <React.Fragment key={i}>
                     <div>

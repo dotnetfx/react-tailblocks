@@ -89,7 +89,7 @@ const App = () => {
     <div className="p-16">
       <Header2 />
 
-      <Layout1 className="my-8" />
+      <Layout1 className="my-8 p-8" />
 
       {/*<div className="container m-24 w-2/6">
         <Form
