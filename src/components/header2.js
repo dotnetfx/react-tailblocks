@@ -3,7 +3,7 @@ import Logo from './logo1'
 import { ArrowSmRightIcon, MenuIcon } from '@heroicons/react/outline'
 
 export default function Header2({ button, logo, menu, className, fixed, inverse }) {
-    const [show, setShow] = useState(window ? window.innerWidth >= 768: true);
+    const [show, setShow] = useState(true) //window ? window.innerWidth >= 768: true);
     const btnStyle = inverse ? "bg-gray-100 text-gray-600 hover:bg-gray-200" : "bg-blue-500 text-white hover:bg-blue-200"
 
     let _button =
