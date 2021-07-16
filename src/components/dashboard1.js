@@ -5,6 +5,7 @@ import Header from './header2'
 import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
 
 export default function Dashboard1({ navigation, menu, contentClass, selectedItem }) {
+    const [show, setShow] = useState(window.innerWidth >= 768)
     const _contentClass = contentClass || "bg-gray-100 px-6 py-8"
     const _navigation = navigation || <Header />
     const _menu = menu || [{
@@ -60,7 +61,7 @@ export default function Dashboard1({ navigation, menu, contentClass, selectedIte
         }, {
             title: "Applications",
             icon: <CollectionIcon className="h-6 w-6" />,
-            content: 
+            content:
                 <div>
                     <h3 className="text-gray-700 text-3xl font-medium">Applications</h3>
                 </div>
@@ -70,33 +71,33 @@ export default function Dashboard1({ navigation, menu, contentClass, selectedIte
         items: [{
             title: "Elements",
             icon: <CubeIcon className="h-6 w-6" />,
-            content: 
+            content:
                 <div>
                     <h3 className="text-gray-700 text-3xl font-medium">Elements</h3>
                 </div>
         }, {
             title: "Tables",
             icon: <TableIcon className="h-6 w-6" />,
-            content: 
+            content:
                 <div>
                     <h3 className="text-gray-700 text-3xl font-medium">Tables</h3>
                 </div>
         }, {
             title: "Forms",
             icon: <TemplateIcon className="h-6 w-6" />,
-            content:  
+            content:
                 <div>
                     <h3 className="text-gray-700 text-3xl font-medium">Forms</h3>
                 </div>
         }]
     }, {
         items: [{
-          content:
-            <div>
-              <h3 className="text-gray-700 text-3xl font-medium">Profile</h3>
-            </div>
+            content:
+                <div>
+                    <h3 className="text-gray-700 text-3xl font-medium">Profile</h3>
+                </div>
         }]
-      }]
+    }]
 
     const [selected, setSelected] = useState(_menu[0].items[0]);
     useEffect(() => {
@@ -107,30 +108,39 @@ export default function Dashboard1({ navigation, menu, contentClass, selectedIte
         <div className="flex flex-col h-screen">
             {_navigation}
             <div className="flex h-full bg-gray-200">
-                <div className="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
-                    <nav className="mt-10 text-gray-500">
-                        {_menu.map((m, i) => {
-                            return ( m.category && 
-                                <div key={i} className="px-4 pb-8">
-                                    <h2 className="text-lg">{m.category}</h2>
-                                    {m.items.map((t, j) => {
-                                        const hover = selected.title === t.title ? "bg-gray-500 bg-opacity-25 text-gray-300" : "hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                                        return (
-                                            <div key={j} className={"flex items-center mt-4 py-2 px-4 cursor-pointer " + hover} onClick={(e) => {
-                                                setSelected(t)
-                                            }}>
-                                                {t.icon}
-                                                <span className="mx-3">{t.title}</span>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            )
-                        })}
+                <div className="z-50 inset-y-0 left-0 transition h-full duration-300 transform bg-gray-900 overflow-hidden lg:translate-x-0 lg:static lg:inset-0">
+                    <nav className={"md:mt-8 text-gray-500 h-full flex " + (show ? "mt-4 md:mt-8" : "")}>
+                        <div className="w-full overflow-x-hidden overflow-y-auto">
+                            {_menu.map((m, i) => {
+                                return (m.category &&
+                                    <div key={i} className="pl-2 md:pl-4 pb-8">
+                                        {show ? <h2 className="text-lg pb-2">{m.category}</h2> : <div className="mt-2"></div>}
+                                        {m.items.map((t, j) => {
+                                            const hover = selected.title === t.title ? "bg-gray-500 bg-opacity-25 text-gray-300" : "hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                                            return (
+                                                <div key={j} className={"flex items-center py-1 md:py-2 px-1 md:px-4 cursor-pointer " + hover} onClick={(e) => {
+                                                    setSelected(t)
+                                                }}>
+                                                    {t.icon}
+                                                    {show && <span className="mx-3">{t.title}</span>}
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <div className="m-auto overflow-hidden">
+                            <div className="text-3xl md:text-4xl pr-1 cursor-pointer"
+                                onClick={() => {
+                                    setShow(!show)
+                                }}
+                            >|</div>
+                        </div>
                     </nav>
                 </div>
 
-                <div className="flex-1 flex flex-col overflow-hidden">
+                <div className="flex-1 flex flex-column overflow-hidden">
                     <main className={"flex-1 overflow-x-hidden overflow-y-auto " + _contentClass}>
                         {selected.content}
                     </main>

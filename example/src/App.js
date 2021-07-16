@@ -2,7 +2,8 @@ import React from 'react'
 //import React, { useState } from 'react'
 //import { Blog1, Dashboard1, Header2, Footer1, Login1, Pricing1, Register1, Reset1, Modal1 } from 'react-tailblocks'
 //import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
-import { Header2, Footer1, Layout1 } from 'react-tailblocks'
+//import { Header2, Footer1, Layout1, Dashboard1 } from 'react-tailblocks'
+import { Dashboard1 } from 'react-tailblocks'
 
 const App = () => {
   // const [selected, setSelected] = useState();
@@ -86,12 +87,14 @@ const App = () => {
   // )
 
   return (
-    <div className="p-16">
-      <Header2 />
+    <Dashboard1 />
+
+     /*<div className="p-16">
+     <Header2 />
 
       <Layout1 className="my-8 p-8" />
 
-      {/*<div className="container m-24 w-2/6">
+      <div className="container m-24 w-2/6">
         <Form
           onSubmit={(data) => { console.log(data) }}
         >
@@ -115,11 +118,11 @@ const App = () => {
           <button type="reset" className="bg-gray-300 text-black rounded py-2 px-4 mt-4 mr-2">Cancel</button>
           <button type="submit" className="bg-blue-500 text-white rounded py-2 px-4 mt-4">Save</button>
         </Form>
-        </div>*/}
+        </div>
 
 
       <Footer1 />
-    </div>
+    </div>*/
   )
 }
 
