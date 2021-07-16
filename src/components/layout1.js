@@ -5,7 +5,7 @@ import TextArea from './forms/text-area'
 import Select from './forms/select'
 import { UserCircleIcon, PhotographIcon, ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/outline'
 
-export default function Form1({ className, panels, auto, collapsible }) {
+export default function Form1({ className, panels, auto, collapsible, onCollapse }) {
     const _collapsible = collapsible === undefined ? true : collapsible
     const _auto = auto === undefined ? true : auto
     
@@ -192,6 +192,7 @@ export default function Form1({ className, panels, auto, collapsible }) {
                                                             const c = !_auto ? collapsed.map(x => x) : _panels.map(() => true)
                                                             c[i] = false
                                                             setCollapsed(c)
+                                                            if (onCollapse) onCollapse(c)
                                                         }}
                                                     /> :
                                                     <ChevronUpIcon className="h-4 w-4 text-gray-400 cursor-pointer"
@@ -199,6 +200,7 @@ export default function Form1({ className, panels, auto, collapsible }) {
                                                             const c = !_auto ? collapsed.map(x => x) : _panels.map(() => true)
                                                             c[i] = true
                                                             setCollapsed(c)
+                                                            if (onCollapse) onCollapse(c)
                                                         }}
                                                     />
                                                 }
