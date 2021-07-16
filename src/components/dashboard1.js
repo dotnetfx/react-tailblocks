@@ -7,7 +7,7 @@ import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon,
 export default function Dashboard1({ navigation, menu, contentClass, selectedItem }) {
     const [show, setShow] = useState(window.innerWidth >= 768)
     const _contentClass = contentClass || "bg-gray-100 px-6 py-8"
-    const _navigation = navigation || <Header />
+    const _navigation = navigation || <Header inverse={true} />
     const _menu = menu || [{
         category: "Manage",
         items: [{

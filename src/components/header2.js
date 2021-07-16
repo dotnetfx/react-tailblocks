@@ -43,7 +43,7 @@ export default function Header2({ button, logo, menu, className, fixed, inverse 
             <div className="p-3 md:p-5 flex flex-col md:flex-row">
                 <div className="flex justify-between md:justify-start">
                     {_logo}
-                    <MenuIcon className="h-4 w-4 md:hidden mt-3" onClick={() => {
+                    <MenuIcon className={"h-4 w-4 md:hidden mt-3 " + inverseStyle} onClick={() => {
                         setShow(!show)
                     }} />
                 </div>
