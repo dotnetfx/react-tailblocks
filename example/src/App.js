@@ -3,7 +3,8 @@ import React from 'react'
 //import { Blog1, Dashboard1, Header2, Footer1, Login1, Pricing1, Register1, Reset1, Modal1 } from 'react-tailblocks'
 //import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
 //import { Header2, Footer1, Layout1, Dashboard1 } from 'react-tailblocks'
-import { Dashboard1 } from 'react-tailblocks'
+//import { Dashboard1 } from 'react-tailblocks'
+import { Pricing1 } from 'react-tailblocks'
 
 const App = () => {
   // const [selected, setSelected] = useState();
@@ -87,7 +88,8 @@ const App = () => {
   // )
 
   return (
-    <Dashboard1 />
+    /*<Dashboard1 />*/
+    <Pricing1 />
 
      /*<div className="p-16">
      <Header2 />
