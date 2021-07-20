@@ -163,7 +163,7 @@ export default function Form1({ className, panels, auto, collapsible, onCollapse
     const [collapsed, setCollapsed] = useState(items)
 
     return (
-        <div className={"bg-gray-100 " + className}>
+        <div className={"bg-gray-100 " + (className ? className : "")}>
             {_panels.map((p, i) => (
                 <React.Fragment key={i}>
                     <div>

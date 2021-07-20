@@ -32,7 +32,7 @@ export default function Blog1({ items, className, cardClass }) {
     ]
 
     return (
-        <section className={"text-gray-600 body-font " + className}>
+        <section className={"text-gray-600 body-font " + (className ? className : "")}>
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap -m-4">
                     { _items.map((d, i) => (

@@ -10,7 +10,7 @@ export default function Logo1({ title, image, inverse, className, href }) {
     const _href = href || "/"
 
     return (
-        <a href={_href} className={"flex order-first title-font font-medium items-center " + txtClass + className}>
+        <a href={_href} className={"flex order-first title-font font-medium items-center " + txtClass + (className ? className : "")}>
             {_svg}
             <span className="ml-3 text-xl">{_title}</span>
         </a>

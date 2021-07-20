@@ -6,7 +6,7 @@ export default function Select({ name, label, className, inputClass, labelClass,
     const { register, formState:{ errors }, getValues, editing } = useFormContext()
 
     return (
-        <div className={"mt-2 " + className}>
+        <div className={"mt-2 " + (className ? className : "")}>
             <label htmlFor={name} 
                 className={"block text-sm font-medium text-gray-600 " + labelClass}>
                     {label}

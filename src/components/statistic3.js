@@ -26,7 +26,7 @@ export default function Statistic3({ title, description, stats, className}) {
     ]
 
     return (
-        <section className={"text-gray-600 body-font " + className}>
+        <section className={"text-gray-600 body-font " + (className ? className : "")}>
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-col text-center w-full mb-20">
                     { typeof _title === "string" ?

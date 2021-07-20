@@ -62,7 +62,7 @@ export default function Header5({ options, className }) {
     const [showMenu, setShowMenu] = useState(false)
 
     return (
-        <header className={"text-gray-600 body-font " + className}>
+        <header className={"text-gray-600 body-font " + (className ? className : "")}>
             <div className="container flex flex-wrap p-5 flex-col md:flex-row items-center">
                 {_options.logo}
                 <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-lg justify-center">

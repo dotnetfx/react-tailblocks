@@ -5,7 +5,7 @@ export default function Input({ name, type, prefix, label, value, placeHolder, c
     const { register, formState: { errors }, getValues, editing } = useFormContext()
 
     return (
-        <div className={"mt-2 " + className}>
+        <div className={"mt-2 " + (className ? className : "")}>
             {type === 'checkbox' || type === "radio" ?
                 <React.Fragment>
                     <div className="flex items-start">

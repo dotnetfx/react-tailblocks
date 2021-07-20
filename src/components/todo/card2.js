@@ -13,7 +13,7 @@ export default function Card2({ options, className }) {
     }
 
     return (
-        <div className={"flex items-center px-5 py-6 shadow-sm rounded-md bg-white " + className}>
+        <div className={"flex items-center px-5 py-6 shadow-sm rounded-md bg-white " + (className ? className : "")}>
             {_options.icon}
             <div className="mx-5">
                 <h4 className="text-2xl font-semibold text-gray-700">{_options.title}</h4>

@@ -36,7 +36,7 @@ export default function Feature1({ title, features, className }) {
     ]
 
     return (
-        <section className={"text-gray-600 body-font " + className}>
+        <section className={"text-gray-600 body-font " + (className ? className : "")}>
             <div className="container px-5 py-24 mx-auto">
                 { typeof _title === "string" ?
                     <h1 className="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">{_title}</h1> :

@@ -49,7 +49,7 @@ export default function Content3({ title, description, items, button, className 
   ]
 
   return (
-    <section className={"text-gray-600 body-font " + className}>
+    <section className={"text-gray-600 body-font " + (className ? className : "")}>
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
           {typeof _title === "string" ?

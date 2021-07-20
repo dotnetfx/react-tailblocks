@@ -39,7 +39,7 @@ export default function Header2({ button, logo, menu, className, fixed, inverse 
     const inverseStyle = inverse ? "text-white bg-blue-500 " : "text-blue-500 bg-white "
 
     return (
-        <header className={"body-font shadow-md z-50 w-full" + fixedStyle + inverseStyle + className}>
+        <header className={"body-font shadow-md z-50 w-full" + fixedStyle + inverseStyle + (className ? className : "")}>
             <div className="p-3 md:p-5 flex flex-col md:flex-row">
                 <div className="flex justify-between md:justify-start">
                     {_logo}

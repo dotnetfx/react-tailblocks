@@ -10,7 +10,7 @@ export default function Card1({ title, value, icon, className }) {
         </div>
 
     return (
-        <div className={"flex items-center px-5 py-6 shadow-sm rounded-md bg-white " + className}>
+        <div className={"flex items-center px-5 py-6 shadow-sm rounded-md bg-white " + (className ? className : "")}>
             {_icon}
             <div className="mx-5">
                 { typeof _value === "string" ?

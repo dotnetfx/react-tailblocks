@@ -30,7 +30,7 @@ export default function Modal1({ options, className, show }) {
     return (
         <React.Fragment>
             { show &&
-                <div className={"fixed z-10 inset-0 overflow-y-auto" + className} aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                <div className={"fixed z-10 inset-0 overflow-y-auto " + (className ? className : "")} aria-labelledby="modal-title" role="dialog" aria-modal="true">
                     <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                         <form onSubmit={(e) => { if (_options.onSubmit) return _options.onSubmit(e) }}>
                             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
