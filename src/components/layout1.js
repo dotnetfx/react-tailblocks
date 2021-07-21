@@ -5,10 +5,11 @@ import TextArea from './forms/text-area'
 import Select from './forms/select'
 import { UserCircleIcon, PhotographIcon, ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/outline'
 
-export default function Form1({ className, panels, auto, collapsible, onCollapse }) {
+export default function Form1({ className, panels, auto, collapsible, summary, onCollapse }) {
     const _collapsible = collapsible === undefined ? true : collapsible
     const _auto = auto === undefined ? true : auto
-    
+    const _summary = summary === undefined ? true : summary
+
     const _panels = panels || [
         {
             label: <h3 className="text-md font-medium leading-6 text-gray-600">Profile</h3>,
@@ -163,32 +164,34 @@ export default function Form1({ className, panels, auto, collapsible, onCollapse
     const [collapsed, setCollapsed] = useState(items)
 
     return (
-        <div className={"bg-gray-100 " + (className ? className : "")}>
+        <div className={"bg-gray-100 " + className}>
             {_panels.map((p, i) => (
                 <React.Fragment key={i}>
                     <div>
-                        <div className="md:grid md:grid-cols-3 md:gap-6">
-                            <div className="md:col-span-1">
-                                <div className="px-4 sm:px-0">
-                                    {typeof p.title === 'string' ?
-                                        <h3 className="text-lg font-medium leading-6 text-gray-900">{p.title}</h3> :
-                                        p.title
-                                    }
-                                    {typeof p.description === 'string' ?
-                                        <p className="mt-1 text-sm text-gray-600">{p.description}</p> :
-                                        p.description
-                                    }
+                        <div className={"md:grid md:gap-6 " + (summary ? "md:grid-cols-3" : "md:grid-cols-2")}>
+                            {_summary &&
+                                <div className="md:col-span-1">
+                                    <div className="px-4 sm:px-0">
+                                        {typeof p.title === 'string' ?
+                                            <h3 className="text-lg font-medium leading-6 text-gray-900">{p.title}</h3> :
+                                            p.title
+                                        }
+                                        {typeof p.description === 'string' ?
+                                            <p className="mt-1 text-sm text-gray-600">{p.description}</p> :
+                                            p.description
+                                        }
+                                    </div>
                                 </div>
-                            </div>
+                            }
                             <div className="mt-5 md:mt-0 md:col-span-2">
                                 <div className="shadow overflow-hidden sm:rounded-md">
                                     <div className="bg-white">
-                                        { _collapsible && 
-                                            <div className={"p-4 w-full flex border-b border-gray-100 " + (p.label ? "justify-between" : "justify-end") }>
+                                        {_collapsible &&
+                                            <div className={"p-4 w-full flex border-b border-gray-100 " + (p.label ? "justify-between" : "justify-end")}>
                                                 {p.label}
-                                                { collapsed[i] ?
+                                                {collapsed[i] ?
                                                     <ChevronDownIcon className="h-4 w-4 text-gray-400 cursor-pointer"
-                                                        onClick={() => { 
+                                                        onClick={() => {
                                                             const c = !_auto ? collapsed.map(x => x) : _panels.map(() => true)
                                                             c[i] = false
                                                             setCollapsed(c)
@@ -196,7 +199,7 @@ export default function Form1({ className, panels, auto, collapsible, onCollapse
                                                         }}
                                                     /> :
                                                     <ChevronUpIcon className="h-4 w-4 text-gray-400 cursor-pointer"
-                                                        onClick={() => { 
+                                                        onClick={() => {
                                                             const c = !_auto ? collapsed.map(x => x) : _panels.map(() => true)
                                                             c[i] = true
                                                             setCollapsed(c)
