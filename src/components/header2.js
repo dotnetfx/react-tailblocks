@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Logo from './logo1'
 import { ArrowSmRightIcon, MenuIcon } from '@heroicons/react/outline'
 
 export default function Header2({ button, logo, menu, className, fixed, inverse }) {
-    const [show, setShow] = useState(true) //window === undefined ? true : window.innerWidth >= 768);
+    const [show, setShow] = useState(true)
     const btnStyle = inverse ? "bg-gray-100 text-gray-600 hover:bg-gray-200" : "bg-blue-500 text-white hover:bg-blue-200"
 
     let _button =
@@ -37,6 +37,10 @@ export default function Header2({ button, logo, menu, className, fixed, inverse 
     const borderStyle = _menu && _menu.length ? "md:border-l md:border-white-400" : ""
     const fixedStyle = fixed ? "md:fixed " : ""
     const inverseStyle = inverse ? "text-white bg-blue-500 " : "text-blue-500 bg-white "
+
+    useEffect(() => {
+        setShow(window === undefined ? true : window.innerWidth >= 768)
+    }, [])
 
     return (
         <header className={"body-font shadow-md z-50 w-full" + fixedStyle + inverseStyle + (className ? className : "")}>

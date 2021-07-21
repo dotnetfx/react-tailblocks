@@ -1,11 +1,11 @@
 import React from 'react'
-import { Layout1 } from 'react-tailblocks'
+import { Dashboard1 } from 'react-tailblocks'
 
 const App = () => {
 
   return (
-    <div className="p-6 bg-gray-100">
-      <Layout1 />
+    <div className="bg-gray-100">
+      <Dashboard1 />
     </div>
   )
 }

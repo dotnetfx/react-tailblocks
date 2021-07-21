@@ -5,7 +5,7 @@ import Header from './header2'
 import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
 
 export default function Dashboard1({ navigation, menu, contentClass, selectedItem }) {
-    const [show, setShow] = useState(true) //window === undefined ? true: window.innerWidth >= 768)
+    const [show, setShow] = useState(true)
     const _contentClass = contentClass || "bg-gray-100 px-6 py-8"
     const _navigation = navigation || <Header />
     const _menu = menu || [{
@@ -102,6 +102,7 @@ export default function Dashboard1({ navigation, menu, contentClass, selectedIte
     const [selected, setSelected] = useState(_menu[0].items[0]);
     useEffect(() => {
         if (selectedItem) setSelected(selectedItem)
+        setShow(window === undefined ? true : window.innerWidth >= 768)
     }, [selectedItem])
 
     return (
