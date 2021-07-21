@@ -5,7 +5,7 @@ const App = () => {
 
   return (
     <div className="p-6 bg-gray-100">
-      <Layout1 summary={false} dividers={false} />
+      <Layout1 />
     </div>
   )
 }

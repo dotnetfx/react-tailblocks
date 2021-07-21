@@ -169,7 +169,7 @@ export default function Form1({ className, panels, auto, collapsible, summary, d
             {_panels.map((p, i) => (
                 <React.Fragment key={i}>
                     <div>
-                        <div className={"md:grid md:gap-6 " + (summary ? "md:grid-cols-3" : "md:grid-cols-2")}>
+                        <div className={"md:grid md:gap-6 " + (_summary ? "md:grid-cols-3" : "md:grid-cols-2")}>
                             {_summary &&
                                 <div className="md:col-span-1">
                                     <div className="px-4 sm:px-0">
