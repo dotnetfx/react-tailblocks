@@ -5,10 +5,11 @@ import TextArea from './forms/text-area'
 import Select from './forms/select'
 import { UserCircleIcon, PhotographIcon, ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/outline'
 
-export default function Form1({ className, panels, auto, collapsible, summary, onCollapse }) {
+export default function Form1({ className, panels, auto, collapsible, summary, dividers, onCollapse }) {
     const _collapsible = collapsible === undefined ? true : collapsible
     const _auto = auto === undefined ? true : auto
     const _summary = summary === undefined ? true : summary
+    const _dividers = dividers === undefined ? true : dividers
 
     const _panels = panels || [
         {
@@ -216,12 +217,15 @@ export default function Form1({ className, panels, auto, collapsible, summary, o
                         </div>
                     </div>
 
-                    {(i + 1 < _panels.length) &&
+                    {_dividers && (i + 1 < _panels.length) && 
                         <div className="hidden sm:block" aria-hidden="true">
-                            <div className="py-8">
+                            <div className="py-6">
                                 <div className="border-t border-gray-200"></div>
                             </div>
                         </div>
+                    }
+                    {!_dividers &&
+                        <div className="py-1"></div>
                     }
                 </React.Fragment>
             ))}
