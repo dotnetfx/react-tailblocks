@@ -23,8 +23,8 @@ export default function Form({ children, onSubmit, className, cancelButton, save
                 onSubmit(e)
             })}>
                 {children}
-                <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                    { _managed &&
+                {_managed &&
+                    <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                         <React.Fragment>
                             {cancelButton ?
                                 cancelButton :
@@ -67,9 +67,9 @@ export default function Form({ children, onSubmit, className, cancelButton, save
                                 </React.Fragment>
                             }
                         </React.Fragment>
-                    }
-                    {buttons ? buttons : <React.Fragment></React.Fragment>}
-                </div>
+                        {buttons ? buttons : <React.Fragment></React.Fragment>}
+                    </div>
+                }
             </form>
         </FormProvider>
     )

@@ -1,20 +1,20 @@
 import React from 'react'
 import { ExclamationIcon } from '@heroicons/react/outline'
 
-export default function Modal1({ options, className, show, header, icon, content, footer }) {
+export default function Modal1({ className, show, header, icon, content, footer }) {
     const _header = header ||
         <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-            "Deactivate Account"
+            Deactivate Account
         </h3>
 
     const _icon = icon ||
-        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+        <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
             <ExclamationIcon className="h-6 w-6 text-red-600" />
         </div>
 
     const _content = content ||
         <p className="text-sm text-gray-500">
-            "Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone."
+            Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.
         </p>
 
     const _footer = footer || 
