@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useFormContext } from "react-hook-form";
 
-
 export default function Input({ name, type, prefix, label, value, placeHolder, className, inputClass, labelClass, errorClass, descriptionClass, checked, disabled, options, description, onChange }) {
     const { register, formState: { errors }, getValues, editing } = useFormContext()
 
