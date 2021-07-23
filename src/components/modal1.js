@@ -60,7 +60,7 @@ export default function Modal1({ className, show, header, icon, content, footer,
                             <form onSubmit={(e) => { if (_onSubmit) return _onSubmit(e) }}>
                                 {children}
                             </form> :
-                            {children}
+                            children
                         }
                     </div>
                 </div>
