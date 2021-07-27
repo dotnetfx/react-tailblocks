@@ -23,6 +23,7 @@ export default function Pricing1({ title, description, categories, cards, classN
             title: "Button",
             onClick: () => { alert("Button 'Free' clicked") }
         },
+        image: "https://dummyimage.com/720x400",
         category: "Monthly"
     }, {
         title: "START",
@@ -37,6 +38,7 @@ export default function Pricing1({ title, description, categories, cards, classN
             title: "Button",
             onClick: () => { alert("Button 'Free' clicked") }
         },
+        image: "https://dummyimage.com/720x400",
         category: "Annually"
     }, {
         title: "PRO",
@@ -54,6 +56,7 @@ export default function Pricing1({ title, description, categories, cards, classN
             title: "Button",
             onClick: () => { alert("Button '$38' clicked") }
         },
+        image: "https://dummyimage.com/720x400",
         category: "Monthly"
     }, {
         title: "PRO",
@@ -71,6 +74,7 @@ export default function Pricing1({ title, description, categories, cards, classN
             title: "Button",
             onClick: () => { alert("Button '$380' clicked") }
         },
+        image: "https://dummyimage.com/720x400",
         category: "Annually"
     }, {
         title: "BUSINESS",
@@ -88,6 +92,7 @@ export default function Pricing1({ title, description, categories, cards, classN
             title: "Button",
             onClick: () => { alert("Button '$56' clicked") }
         },
+        image: "https://dummyimage.com/720x400",
         category: "Monthly"
     }, {
         title: "BUSINESS",
@@ -105,6 +110,7 @@ export default function Pricing1({ title, description, categories, cards, classN
             title: "Button",
             onClick: () => { alert("Button '$560' clicked") }
         },
+        image: "https://dummyimage.com/720x400",
         category: "Annually"
     }, {
         title: "SPECIAL",
@@ -122,6 +128,7 @@ export default function Pricing1({ title, description, categories, cards, classN
             title: "Button",
             onClick: () => { alert("Button '$72' clicked") }
         },
+        image: "https://dummyimage.com/720x400",
         category: "Monthly"
     }, {
         title: "SPECIAL",
@@ -139,6 +146,7 @@ export default function Pricing1({ title, description, categories, cards, classN
             title: "Button",
             onClick: () => { alert("Button '$720' clicked") }
         },
+        image: "https://dummyimage.com/720x400",
         category: "Annually"
     }]
 
@@ -188,6 +196,10 @@ export default function Pricing1({ title, description, categories, cards, classN
                                                 {c.unit && <span className="text-lg ml-1 font-normal text-gray-500">/{c.unit}</span>}
                                             </h1> :
                                             c.price
+                                        }
+                                        { typeof c.image === "string" ?
+                                            <img className="lg:h-48 md:h-36 w-full mb-4 object-cover object-center" src={c.image} alt="blog" /> :
+                                            c.image !== undefined && c.image
                                         }
                                         <div className="mb-4">
                                         { c.features.map((f, i) => {

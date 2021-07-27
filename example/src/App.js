@@ -1,11 +1,11 @@
 import React from 'react'
-import { Dashboard1 } from 'react-tailblocks'
+import { Pricing1 } from 'react-tailblocks'
 
 const App = () => {
 
   return (
     <div className="bg-gray-100">
-      <Dashboard1 />
+      <Pricing1 />
     </div>
   )
 }
