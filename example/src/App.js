@@ -5,7 +5,7 @@ const App = () => {
 
   return (
     <div className="bg-gray-100">
-      <Pricing1 />
+      <Pricing1 interval={false} />
     </div>
   )
 }

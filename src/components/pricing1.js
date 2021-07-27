@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
 import { ArrowSmRightIcon, CheckIcon } from '@heroicons/react/outline'
 
-export default function Pricing1({ title, description, categories, cards, className }) {
+export default function Pricing1({ title, description, categories, starting, interval, cards, className, color }) {
+    const _bdcolor = color ? { borderColor: color } : {}
+    const _bgcolor = color ? { backgroundColor: color } : {}
 
+    const _interval = interval === undefined ? true : interval
     const _title = title || "Pricing"
     const _description = description || "Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical."
     const _categories = categories || [
         "Monthly",
         "Annually"
     ]
-    
+
+    const _starting = starting || _categories[0]
+
     const _cards = cards || [{
         title: "START",
         description: "Literally you probably haven't heard of them jean shorts",
@@ -150,59 +155,63 @@ export default function Pricing1({ title, description, categories, cards, classN
         category: "Annually"
     }]
 
-    const [category, setCategory] = useState(_categories[0]);
+    const [category, setCategory] = useState(_starting)
 
     return (
         <section className={"text-gray-600 body-font overflow-hidden " + (className ? className : "")}>
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-col text-center w-full mb-20">
-                    { typeof _title === 'string' ? 
+                    {typeof _title === 'string' ?
                         <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">{_title}</h1> :
                         _title
                     }
-                    { typeof _description === 'string' ?
+                    {typeof _description === 'string' ?
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-500">{_description}</p> :
                         _description
                     }
-                    <div className="flex mx-auto border-2 border-blue-500 rounded overflow-hidden mt-6">
-                        { _categories.map((c, i) => {
-                            const focus = c === category ? "bg-blue-500 text-white" : ""
-                            return (
-                                <button className={"py-1 px-4 focus:outline-none " + focus} key={i} onClick={() => setCategory(c)}>
-                                    {c}
-                                </button>
-                            )
-                        })}
-                    </div>
+                    {_interval &&
+                        <div className="flex mx-auto border-2 border-blue-500 rounded overflow-hidden mt-6" style={_bdcolor}>
+                            {_categories.map((c, i) => {
+                                const focus = c === category ? "bg-blue-500 text-white" : ""
+                                const sfocus = c === category ? _bgcolor : {}
+                                return (
+                                    <button className={"py-1 px-4 focus:outline-none " + focus} style={sfocus} key={i} onClick={() => setCategory(c)}>
+                                        {c}
+                                    </button>
+                                )
+                            })}
+                        </div>
+                    }
                 </div>
                 <div className="flex flex-wrap -m-4">
-                    { _cards.filter(c => {
-                            if (c.category === category) return c
-                        }).map((c, i) => {
-                            const popular = c.popular ? "border-blue-500" : "";
-                            return (
-                                <div className="p-4 xl:w-1/4 md:w-1/2 w-full" key={i}>
-                                    <div className={"h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden " + popular}>
-                                        { popular !== "" &&
-                                            <span className="bg-blue-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">{c.popular}</span>
-                                        }
-                                        { typeof c.title === 'string' ?
-                                            <h2 className="text-sm tracking-widest title-font mb-1 font-medium">{c.title}</h2> :
-                                            c.title
-                                        }
-                                        { typeof c.price === 'string' ?
-                                            <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                                                <span>{c.price}</span>
-                                                {c.unit && <span className="text-lg ml-1 font-normal text-gray-500">/{c.unit}</span>}
-                                            </h1> :
-                                            c.price
-                                        }
-                                        { typeof c.image === "string" ?
-                                            <img className="lg:h-48 md:h-36 w-full mb-4 object-cover object-center" src={c.image} alt="blog" /> :
-                                            c.image !== undefined && c.image
-                                        }
-                                        <div className="mb-4">
-                                        { c.features.map((f, i) => {
+                    {_cards.filter(c => {
+                        if (c.category === category) return c
+                    }).map((c, i) => {
+                        const popular = c.popular ? "border-blue-500" : ""
+                        const spopular = c.popular ? _bdcolor : {}
+                        return (
+                            <div className="p-4 xl:w-1/4 md:w-1/2 w-full" key={i}>
+                                <div className={"h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden " + popular} style={spopular}>
+                                    {popular !== "" &&
+                                        <span className="bg-blue-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl" style={_bgcolor}>{c.popular}</span>
+                                    }
+                                    {typeof c.title === 'string' ?
+                                        <h2 className="text-sm tracking-widest title-font mb-1 font-medium">{c.title}</h2> :
+                                        c.title
+                                    }
+                                    {typeof c.price === 'string' ?
+                                        <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                                            <span>{c.price}</span>
+                                            {c.unit && <span className="text-lg ml-1 font-normal text-gray-500">/{c.unit}</span>}
+                                        </h1> :
+                                        c.price
+                                    }
+                                    {typeof c.image === "string" ?
+                                        <img className="lg:h-48 md:h-36 w-full mb-4 object-cover object-center" src={c.image} alt="tier" /> :
+                                        c.image !== undefined && c.image
+                                    }
+                                    <div className="mb-4">
+                                        {c.features.map((f, i) => {
                                             const tag = typeof f === 'string' ?
                                                 <p className="flex items-center text-gray-600 mb-2" key={i}>
                                                     <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -212,22 +221,23 @@ export default function Pricing1({ title, description, categories, cards, classN
 
                                             return tag
                                         })}
-                                        </div>
-                                        
-                                        { typeof c.button.title === 'string' ? 
-                                            <button className={"flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 " +
-                                                " rounded " + (popular === "" ? '' : "bg-blue-500")} onClick={c.button.onClick ? c.button.onClick : ()=>{}}>
-                                                {c.button.title}
-                                                <ArrowSmRightIcon className="ml-4 h-5 w-5" />
-                                            </button> :
-                                            c.button
-                                        }
-
-                                        <p className="text-xs text-gray-500 mt-3">{c.description}</p>
                                     </div>
+
+                                    {typeof c.button.title === 'string' ?
+                                        <button className={"flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 " +
+                                            " rounded " + (popular === "" ? '' : "bg-blue-500")} style={popular === "" ? {} : _bgcolor}
+                                            onClick={c.button.onClick ? c.button.onClick : () => { }}>
+                                            {c.button.title}
+                                            <ArrowSmRightIcon className="ml-4 h-5 w-5" />
+                                        </button> :
+                                        c.button
+                                    }
+
+                                    <p className="text-xs text-gray-500 mt-3">{c.description}</p>
                                 </div>
-                            )
-                        })
+                            </div>
+                        )
+                    })
                     }
                 </div>
             </div>
