@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useFormContext } from "react-hook-form";
 
-export default function Input({ name, type, prefix, label, value, placeHolder, className, inputClass, labelClass, errorClass, descriptionClass, checked, disabled, options, description, onChange }) {
+export default function Input({ name, type, prefix, label, value, placeHolder, className, inputClass, labelClass, errorClass, descriptionClass, checked, disabled, options, description, onChange, onBlur, onFocus }) {
     const { register, formState: { errors }, getValues, editing } = useFormContext()
 
     return (
@@ -10,7 +10,10 @@ export default function Input({ name, type, prefix, label, value, placeHolder, c
                 <React.Fragment>
                     <div className="flex items-start">
                         <div className="flex items-center h-5">
-                            <input id={name} name={name} type={type} {...register(name, options)} placeholder={placeHolder} checked={checked} disabled={disabled || !editing} onChange={onChange}
+                            <input id={name} name={name} type={type} {...register(name, options)} placeholder={placeHolder} checked={checked} disabled={disabled || !editing}
+                                onChange={(e) => { if (onChange) onChange(e) }}
+                                onBlur={(e) => { if (onBlur) onBlur(e) }}
+                                onFocus={(e) => { if (onFocus) onFocus(e) }}
                                 className={"focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 " + inputClass}
                             />
                         </div>
@@ -31,14 +34,20 @@ export default function Input({ name, type, prefix, label, value, placeHolder, c
                     {prefix ?
                         <div className="mt-1 flex rounded-md shadow-sm">
                             <span className="inline-flex items-center pl-3 pr-1 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">{prefix}</span>
-                            <input id={name} name={name} type={type} {...register(name, options)} value={value} placeholder={placeHolder} disabled={disabled || !editing} onChange={onChange}
+                            <input id={name} name={name} type={type} {...register(name, options)} value={value} placeholder={placeHolder} disabled={disabled || !editing}
+                                onChange={(e) => { if (onChange) onChange(e) }}
+                                onBlur={(e) => { if (onBlur) onBlur(e) }}
+                                onFocus={(e) => { if (onFocus) onFocus(e) }}
                                 className={"text-gray-700 p-3 focus:ring-blue-500 focus:border-blue-500 shadow-sm flex-1 block w-full rounded-none rounded-r-md sm:text-sm border border-gray-300 " + inputClass}
                             />
                         </div> :
 
                         <React.Fragment>
-                            { editing ?
-                                <input id={name} name={name} type={type} {...register(name, options)} value={value} placeholder={placeHolder} disabled={disabled} onChange={onChange}
+                            {editing ?
+                                <input id={name} name={name} type={type} {...register(name, options)} value={value} placeholder={placeHolder} disabled={disabled}
+                                    onChange={(e) => { if (onChange) onChange(e) }}
+                                    onBlur={(e) => { if (onBlur) onBlur(e) }}
+                                    onFocus={(e) => { if (onFocus) onFocus(e) }}
                                     className={"text-gray-700 p-3 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300 " + inputClass}
                                 /> :
                                 <p>{getValues(name)}</p>

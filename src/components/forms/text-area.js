@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useFormContext } from "react-hook-form";
 
-export default function TextArea({ name, label, value, placeHolder, className, inputClass, labelClass, errorClass, descriptionClass, disabled, options, maxLength, description, onChange }) {
+export default function TextArea({ name, label, value, placeHolder, className, inputClass, labelClass, errorClass, descriptionClass, disabled, options, maxLength, description, onChange, onBlur, onFocus }) {
     const { register, formState: { errors }, getValues, editing } = useFormContext()
     return (
         <div className={"mt-2 " + (className ? className : "")}>
@@ -11,7 +11,10 @@ export default function TextArea({ name, label, value, placeHolder, className, i
             </label>
             {editing ?
                 <React.Fragment>
-                    <textarea id={name} name={name} {...register(name, options)} value={value} placeholder={placeHolder} disabled={disabled} maxLength={maxLength} onChange={onChange}
+                    <textarea id={name} name={name} {...register(name, options)} value={value} placeholder={placeHolder} disabled={disabled} maxLength={maxLength}
+                        onChange={(e) => { if (onChange) onChange(e) }}
+                        onBlur={(e) => { if (onBlur) onBlur(e) }}
+                        onFocus={(e) => { if (onFocus) onFocus(e) }}
                         className={"text-gray-700 p-3 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300" + inputClass}
                     />
                     <p className={"text-red-400 font-medium text-sm " + errorClass}>{errors[name]?.message}</p>

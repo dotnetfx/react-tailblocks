@@ -158,8 +158,8 @@ export default function Pricing1({ title, description, categories, starting, int
     const [category, setCategory] = useState(_starting)
 
     return (
-        <section className={"text-gray-600 body-font overflow-hidden " + (className ? className : "")}>
-            <div className="container px-5 py-24 mx-auto">
+        <section className={"text-gray-600 body-font overflow-hidden mx-auto " + (className ? className : "")}>
+            <div className="container px-5 py-24">
                 <div className="flex flex-col text-center w-full mb-20">
                     {typeof _title === 'string' ?
                         <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">{_title}</h1> :
@@ -183,7 +183,7 @@ export default function Pricing1({ title, description, categories, starting, int
                         </div>
                     }
                 </div>
-                <div className="flex flex-wrap -m-4">
+                <div className="flex justify-center flex-wrap -m-4">
                     {_cards.filter(c => {
                         if (c.category === category) return c
                     }).map((c, i) => {

@@ -20,7 +20,7 @@ export default function Form({ children, onSubmit, className, cancelButton, save
         <FormProvider {..._context} className={className}>
             <form onSubmit={handleSubmit((e) => {
                 setEditing(false)
-                onSubmit(e)
+                if (onSubmit) onSubmit(e)
             })}>
                 {children}
                 {_managed &&
