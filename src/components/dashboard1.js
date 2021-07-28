@@ -4,7 +4,7 @@ import Card from './card1'
 import Header from './header2'
 import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
 
-export default function Dashboard1({ navigation, menu, contentClass, selectedItem }) {
+export default function Dashboard1({ navigation, menu, contentClass, selectedItem, onSelect }) {
     const [show, setShow] = useState(true)
     const _contentClass = contentClass || "bg-gray-100 px-6 py-8"
     const _navigation = navigation || <Header />
@@ -99,9 +99,12 @@ export default function Dashboard1({ navigation, menu, contentClass, selectedIte
         }]
     }]
 
-    const [selected, setSelected] = useState(_menu[0].items[0]);
+    const [selected, setSelected] = useState()
+
     useEffect(() => {
-        if (selectedItem) setSelected(selectedItem)
+        setSelected(selectedItem ? selectedItem : _menu[0].items[0])
+        if (onSelect) onSelect(selectedItem ? selectedItem : _menu[0].items[0])
+
         setShow(window === undefined ? true : window.innerWidth >= 768)
     }, [selectedItem])
 
@@ -117,10 +120,11 @@ export default function Dashboard1({ navigation, menu, contentClass, selectedIte
                                     <div key={i} className="pl-2 md:pl-4 pb-8">
                                         {show ? <h2 className="text-lg pb-2">{m.category}</h2> : <div className="mt-2"></div>}
                                         {m.items.map((t, j) => {
-                                            const hover = selected.title === t.title ? "bg-gray-500 bg-opacity-25 text-gray-300" : "hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                                            const hover = selected?.title === t.title ? "bg-gray-500 bg-opacity-25 text-gray-300" : "hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
                                             return (
                                                 <div key={j} className={"flex items-center py-1 md:py-2 px-1 md:px-4 cursor-pointer " + hover} onClick={(e) => {
                                                     setSelected(t)
+                                                    if (onSelect) onSelect(t)
                                                 }}>
                                                     {t.icon}
                                                     {show && <span className="mx-3">{t.title}</span>}
@@ -143,7 +147,7 @@ export default function Dashboard1({ navigation, menu, contentClass, selectedIte
 
                 <div className="flex-1 flex flex-column overflow-hidden">
                     <main className={"flex-1 overflow-x-hidden overflow-y-auto " + _contentClass}>
-                        {selected.content}
+                        {selected?.content}
                     </main>
                 </div>
             </div>
