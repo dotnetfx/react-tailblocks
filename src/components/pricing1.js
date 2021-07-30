@@ -29,7 +29,8 @@ export default function Pricing1({ title, description, categories, starting, int
             onClick: () => { alert("Button 'Free' clicked") }
         },
         image: "https://dummyimage.com/720x400",
-        category: "Monthly"
+        category: "Monthly",
+        disabled: true
     }, {
         title: "START",
         description: "Literally you probably haven't heard of them jean shorts",
@@ -44,7 +45,8 @@ export default function Pricing1({ title, description, categories, starting, int
             onClick: () => { alert("Button 'Free' clicked") }
         },
         image: "https://dummyimage.com/720x400",
-        category: "Annually"
+        category: "Annually",
+        disabled: true
     }, {
         title: "PRO",
         description: "Literally you probably haven't heard of them jean shorts",
@@ -158,8 +160,8 @@ export default function Pricing1({ title, description, categories, starting, int
     const [category, setCategory] = useState(_starting)
 
     return (
-        <section className={"text-gray-600 body-font overflow-hidden mx-auto " + (className ? className : "")}>
-            <div className="container px-5 py-24">
+        <section className={"text-gray-600 body-font overflow-hidden " + (className ? className : "")}>
+            <div className="container px-5 py-24 w-full mx-auto">
                 <div className="flex flex-col text-center w-full mb-20">
                     {typeof _title === 'string' ?
                         <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">{_title}</h1> :
@@ -189,6 +191,7 @@ export default function Pricing1({ title, description, categories, starting, int
                     }).map((c, i) => {
                         const popular = c.popular ? "border-blue-500" : ""
                         const spopular = c.popular ? _bdcolor : {}
+
                         return (
                             <div className="p-4 xl:w-1/4 md:w-1/2 w-full" key={i}>
                                 <div className={"h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden " + popular} style={spopular}>
@@ -206,6 +209,7 @@ export default function Pricing1({ title, description, categories, starting, int
                                         </h1> :
                                         c.price
                                     }
+                                    {c.disabled && <p className="text-sm text-gray-800 mb-3">This tier is not available.</p>}
                                     {typeof c.image === "string" ?
                                         <img className="lg:h-48 md:h-36 w-full mb-4 object-cover object-center" src={c.image} alt="tier" /> :
                                         c.image !== undefined && c.image
@@ -224,8 +228,10 @@ export default function Pricing1({ title, description, categories, starting, int
                                     </div>
 
                                     {typeof c.button.title === 'string' ?
-                                        <button className={"flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 " +
-                                            " rounded " + (popular === "" ? '' : "bg-blue-500")} style={popular === "" ? {} : _bgcolor}
+                                        <button disabled={c.disabled} 
+                                            className={"flex items-center mt-auto text-white border-0 py-2 px-4 w-full focus:outline-none " +
+                                            (c.disabled ? "bg-gray-300 " : "bg-gray-400 hover:bg-gray-500") +" rounded " + (popular === "" ? '' : "bg-blue-500")} 
+                                            style={popular === "" ? {} : _bgcolor}
                                             onClick={c.button.onClick ? c.button.onClick : () => { }}>
                                             {c.button.title}
                                             <ArrowSmRightIcon className="ml-4 h-5 w-5" />
