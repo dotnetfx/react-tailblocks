@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import { ShieldCheckIcon, TrendingUpIcon, CloudDownloadIcon, UserIcon } from '@heroicons/react/outline'
 
-export default function Steps3({ steps, className }) {
+export default function Steps3({ title, steps, className }) {
+    const _title = title ||
+        <h1 className="pt-24 sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">
+            As Simple as One, Two, Three, Four
+        </h1>
+
     const _steps = steps || [{
         title: "Shooting Stars",
         description: "VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.",
@@ -26,7 +31,13 @@ export default function Steps3({ steps, className }) {
 
     return (
         <section className={"text-gray-600 body-font " + (className ? className : "")}>
-            <div className="container px-5 py-24 mx-auto flex flex-wrap">
+
+            {typeof _title === "string" ?
+                <h1 className="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">{_title}</h1> :
+                _title
+            }
+
+            <div className="container px-5 pb-24 mx-auto flex flex-wrap">
                 {_steps.map((s, i) => (
                     <div key={i} className="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
                         <div className="h-full w-6 absolute inset-0 flex items-center justify-center">
