@@ -4,6 +4,7 @@ import { useFormContext } from "react-hook-form";
 export default function Select({ name, label, className, inputClass, labelClass, errorClass, descriptionClass, disabled, options, items, size, description, onChange, onBlur, onFocus }) {
     const _items = items || []
     const { register, formState: { errors }, getValues, editing } = useFormContext()
+    const { onChange: onc, onBlur: onb, ref, name: nm} = register(name, options)
 
     return (
         <div className={"mt-2 " + (className ? className : "")}>
@@ -12,9 +13,9 @@ export default function Select({ name, label, className, inputClass, labelClass,
                 {label}
             </label>
             {editing ?
-                <select id={name} name={name} {...register(name, options)} disabled={disabled} size={size}
-                    onChange={(e) => { if (onChange) onChange(e) }}
-                    onBlur={(e) => { if (onBlur) onBlur(e) }}
+                <select id={name} name={nm} ref={ref} disabled={disabled} size={size}
+                    onChange={(e) => { onc(e); if (onChange) onChange(e) }}
+                    onBlur={(e) => { onb(e); if (onBlur) onBlur(e) }}
                     onFocus={(e) => { if (onFocus) onFocus(e) }}
                     className={"text-gray-700 p-3 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300" + inputClass}
                 >
