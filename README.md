@@ -75,7 +75,7 @@ export default function Example() {
 ```
 
 ## Components
-Card1, Content3, Dashboard1, Ecommerce1, Email1, Feature1, Footer1, Footer4, Form, Grid1, Header2, Hero1, Input, Layout1, Login1, Logo1, Modal1, Pricing1, Register1, Reset1, Select, Statistics3, Steps3, Table1, TextArea
+Card1, Content3, Dashboard1, Ecommerce1, Email1, Feature1, Footer1, Footer4, Form, Grid1, Header2, Hero1, Input, Layout1, Login1, Logo1, Modal1, Pricing1, Register1, Reset1, Select, Statistics3, Steps3, Table1, Tabs1, TextArea
 
 ## License
 

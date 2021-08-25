@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Table from './table1'
-import Card from './card1'
+import Card from './core/card1'
 import Header from './header2'
 import { ChartPieIcon, UserGroupIcon, CollectionIcon, ShoppingBagIcon, CubeIcon, TableIcon, TemplateIcon } from '@heroicons/react/outline'
 
