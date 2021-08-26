@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { LockClosedIcon, CubeIcon } from '@heroicons/react/outline'
 
-export default function Reset1({ title, logo, loginUrl, onReset, action, error }) {
+export default function Reset1({ title, description, logo, loginUrl, onReset, action, error }) {
 	const [email, setEmail] = useState(null)
 	const [errorMsg, setErrorMsg] = useState(error)
 	
 	const _loginUrl = loginUrl
 	const _title = title || "Reset Account Password"
+	const _description = description || "By resetting your password you can get access to all the awesome features our system has to offer."
 	const _logo = logo || <CubeIcon className="p-2 mx-auto w-16 h-16 text-white bg-blue-500 rounded-full" />
 
 	useEffect(() => {
@@ -32,6 +33,7 @@ export default function Reset1({ title, logo, loginUrl, onReset, action, error }
 				<div>
 					<div className="mx-auto">{_logo}</div>
 					<h2 className="mt-6 text-center text-3xl font-medium text-gray-900">{_title}</h2>
+					<h4 className="mt-6 text-center text-sm text-gray-500">{_description}</h4>
 				</div>
 				<form className="mt-8 space-y-6" method="POST" action={action}>
 					<div className="rounded-md shadow-sm -space-y-px">

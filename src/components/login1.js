@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { LockClosedIcon, CubeIcon } from '@heroicons/react/outline'
 
-export default function Login1({ title, logo, remember, forgotUrl, registerUrl, onLogin, action, passwordLength, error, hidden }) {
+export default function Login1({ title, description, logo, remember, forgotUrl, registerUrl, onLogin, action, passwordLength, error, hidden }) {
 	const [email, setEmail] = useState(null)
 	const [password, setPassword] = useState(null)
 	const [rememberMe, setRememberMe] = useState(false)
@@ -12,6 +12,7 @@ export default function Login1({ title, logo, remember, forgotUrl, registerUrl, 
 	const _forgot = forgotUrl
 	const _register = registerUrl
 	const _title = title || "Sign Into Your Account"
+	const _description = description || "By signing into your account you get access to all the awesome features our system has to offer."
 	const _logo = logo || <CubeIcon className="p-2 mx-auto w-16 h-16 text-white bg-blue-500 rounded-full" />
 
 	useEffect(() => {
@@ -37,6 +38,7 @@ export default function Login1({ title, logo, remember, forgotUrl, registerUrl, 
 				<div>
 					<div className="mx-auto">{_logo}</div>
 					<h2 className="mt-6 text-center text-3xl font-medium text-gray-900">{_title}</h2>
+					<h4 className="mt-6 text-center text-sm text-gray-500">{_description}</h4>
 				</div>
 				<form className="mt-8 space-y-6" method="POST" action={action}>
 					{hidden && hidden.map(h => (h))}
