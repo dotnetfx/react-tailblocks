@@ -4,7 +4,7 @@ import { ArrowSmRightIcon, EyeIcon, ChatIcon } from '@heroicons/react/outline'
 export default function Blog1({ title, items, className, cardClass }) {
     const _title = title ||
         <h1 className="pt-24 sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">
-            As Simple as One, Two, Three, Four
+            Effervescent Blog Articles
         </h1>
 
     const _cardClass = cardClass || "md:w-1/3"

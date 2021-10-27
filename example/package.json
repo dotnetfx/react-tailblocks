@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
+    "react-image-gallery": "^1.2.7",
     "react-tailblocks": "link:.."
   },
   "devDependencies": {
