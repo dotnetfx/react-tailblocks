@@ -7,6 +7,7 @@ const App = () => {
     <Ecommerce2
       brand="ZOKKS"
       title="Red Motif"
+      buttonText="Buy it Now"
       description={
         <div>
           <span>
@@ -58,11 +59,15 @@ const App = () => {
           <br /><br />
         </div>
       }
-      select={{
-        title: "Size",
-        options: ["Small", "Medium", "Large"]
+      color="red"
+      variant={{
+        title: "Color",
+        options: [
+          { title: "Red", price: 9.91 }, 
+          { title: "Green", price: 9.92, disabled: true }, 
+          { title: "Yellow", price: 9.93 }
+        ]
       }}
-      price={13.95}
       images={[
         {
           original: 'https://i2.wp.com/zokks.com/wp-content/uploads/2021/10/45132-168.jpg?fit=1024%2C1024&ssl=1',
@@ -77,8 +82,8 @@ const App = () => {
           thumbnail: 'https://i2.wp.com/zokks.com/wp-content/uploads/2021/10/45132-170.jpg?fit=120%2C120&ssl=1'
         }
       ]}
-      onAddToCart={(item) => {
-        console.log("Ordered: " + item)
+      onPurchase={(item) => {
+        console.log("Ordered variant option: ", item)
       }}
     />
   )
