@@ -63,9 +63,9 @@ const App = () => {
       variant={{
         title: "Color",
         options: [
-          { title: "Red", price: 9.91 }, 
-          { title: "Green", price: 9.92, disabled: true }, 
-          { title: "Yellow", price: 9.93 }
+          { title: "Red", description: "The red option is absolutely amazing.", price: 9.91 }, 
+          { title: "Green", description: "The green option is great for lizards.", price: 9.92, disabled: true }, 
+          { title: "Yellow", description: "Stay away from the yellow option.", price: 9.93 }
         ]
       }}
       images={[

@@ -116,6 +116,7 @@ export default function Ecommerce2({ brand, title, buttonText, description, vari
                         <div className="mb-4"></div>
 
                         {typeof _description === "string" ? <p className="leading-relaxed">{_description}</p> : _description}
+                        {option. description && <p className="leading-relaxed">{option.description}</p>}
 
                         <div className="flex mt-4 items-center pb-5 border-b-2 border-gray-100 mb-5">
                             {/*<div className="flex">
@@ -130,11 +131,8 @@ export default function Ecommerce2({ brand, title, buttonText, description, vari
                                     <div className="relative">
                                         <React.Fragment>
                                             <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base pl-3 pr-10" value={option.title} onChange={(e) => {
-                                                console.log(_variant.options)
-                                                console.log(e.target.value)
-                                                const option = _variant.options.find(o => {console.log(o.title); return o.title === e.target.value})
-                                                console.log(option)
-                                                setOption(option)
+                                                const opt = _variant.options.find(o => o.title === e.target.value)
+                                                setOption(opt)
                                             }}>
                                                 {_variant.options.map((v, i) => typeof v.title === "string" ? <option key={i} disabled={v.disabled} value={v.title}>{v.title}</option> : v)}
                                             </select>
