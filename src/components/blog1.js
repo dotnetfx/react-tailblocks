@@ -64,7 +64,7 @@ export default function Blog1({ title, items, className, cardClass }) {
                                         <p className="px-6 leading-relaxed mb-3 flex-grow">{d.description}</p> :
                                         d.description
                                     }
-                                    <div className="flex items-center flex-wrap px-6 py-4">
+                                    <div className="flex items-center flex-wrap px-6 pb-4">
                                         {typeof d.more === "string" ?
                                             <a className="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">{d.more}
                                                 <ArrowSmRightIcon className="ml-4 h-5 w-5" />

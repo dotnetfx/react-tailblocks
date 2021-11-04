@@ -130,10 +130,13 @@ export default function Ecommerce2({ brand, title, buttonText, description, vari
                                     <div className="relative">
                                         <React.Fragment>
                                             <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base pl-3 pr-10" value={option.title} onChange={(e) => {
-                                                const option = _variant.options.find(o => o.title === e.target.value)
+                                                console.log(_variant.options)
+                                                console.log(e.target.value)
+                                                const option = _variant.options.find(o => {console.log(o.title); return o.title === e.target.value})
+                                                console.log(option)
                                                 setOption(option)
                                             }}>
-                                                {_variant.options.map((v, i) => typeof v.title === "string" ? <option key={i} disabled={v.disabled}>{v.title}</option> : v)}
+                                                {_variant.options.map((v, i) => typeof v.title === "string" ? <option key={i} disabled={v.disabled} value={v.title}>{v.title}</option> : v)}
                                             </select>
                                             <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                                                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4" viewBox="0 0 24 24">
